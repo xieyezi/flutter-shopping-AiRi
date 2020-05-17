@@ -1,0 +1,47 @@
+{
+  "bannerList": [
+    "https://yanxuan.nosdn.127.net/5efcbeecb663e629c1bb309c7b356f60.png",
+    "https://yanxuan.nosdn.127.net/f968b48c45f29fc1a15b6cff7f92368d.png",
+    "https://yanxuan.nosdn.127.net/17cbeab4e5e47ef2b5fa0f2adce6cbc2.png",
+    "https://yanxuan.nosdn.127.net/cf035e09fe2fae909e5d378ccd396e56.png",
+    "https://yanxuan.nosdn.127.net/53dd392169abf4984ee5daec84510826.png",
+    "https://yanxuan.nosdn.127.net/1f22276749f73010ae94ae6b8960d201.png"
+  ],
+  "specificationList": [
+    {
+      "name": "规格名称1",
+      "specification": [
+        "规格值1",
+        "规格值2",
+        "规格值3",
+        "规格值4",
+        "规格值5",
+        "规格值6",
+        "规格值7"
+      ]
+    },
+    {
+      "name": "规格名称2",
+      "specification": [
+        "规格值8",
+        "规格值9",
+        "规格值10",
+        "特别特别特别特别长的规格"
+      ]
+    }
+  ],
+  "contact": "17783887443",
+  "goodsName": "蔻驰 COACH 奢侈品 女士深棕色PVC手提单肩包 F57842 IMAA8",
+  "brandName": "蔻驰",
+  "goodsSeries": "春夏上新",
+  "price": "5000.0",
+  "supplierId": "12313",
+  "supplierName": "蔻驰",
+  "supplierCode": "zs11WBD66666",
+  "platformCode": "zs11WBD66666",
+  "produceTime": "999天",
+
+  "guidePrice": "6599.0",
+  "miniBuyNum": "999",
+  "goodsImgUrl": "https://yanxuan.nosdn.127.net/1f22276749f73010ae94ae6b8960d201.png"
+}
