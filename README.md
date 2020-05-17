@@ -8,8 +8,6 @@
 
 ## 预览
 
-## 预览
-
 部分页面效果如下：
 
 | ![](./screenshot/Screenshot_1.png)  | ![](./screenshot/Screenshot_2.png)  | ![](./screenshot/Screenshot_3.png)  | ![](./screenshot/Screenshot_4.png)  |
