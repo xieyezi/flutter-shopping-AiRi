@@ -63,7 +63,7 @@ class Specifications extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: Text(
-                '采购价',
+                '优惠价',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 12,
@@ -269,7 +269,7 @@ class Specifications extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text('最低采购数量', style: geryText),
+          Text('最低购买数量', style: geryText),
           Text('$miniBuyNum件', style: geryText),
         ],
       ),
