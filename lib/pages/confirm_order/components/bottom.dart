@@ -22,14 +22,12 @@ class Bottom extends StatelessWidget {
             content: Center(
               child: Column(
                 children: <Widget>[
-                  Image.asset(
-                      'assets/images/confirm_order/dingdanchenggong.png'),
+                  Image.asset('assets/images/confirm_order/dingdanchenggong.png'),
                   Container(
-                    padding: EdgeInsets.only(bottom: 0.0, top: 20),
+                    padding: EdgeInsets.only(bottom: 0.0, top: 10),
                     child: Text(
                       '订单提交成功',
-                      style:
-                          TextStyle(color: Color(0xFF4A4A4A), fontSize: 14.0),
+                      style: TextStyle(color: Color(0xFF4A4A4A), fontSize: 14.0),
                     ),
                   ),
                 ],
@@ -65,8 +63,7 @@ class Bottom extends StatelessWidget {
     );
     return Container(
       height: 60 + MediaQuery.of(context).padding.bottom,
-      padding: EdgeInsets.only(
-          bottom: MediaQuery.of(context).padding.bottom, top: 0),
+      padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom, top: 0),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Colors.white,
