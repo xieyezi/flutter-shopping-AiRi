@@ -10,6 +10,13 @@ Realize specific design effects by setting, modifying, combining self-contained 
 
 This project is still in continuous iteration, just give 🌟🌟 if you like it !
 
+## Next Plan
+
+[ ] Organize project folders and optimize code
+[ ] Complete the login page
+[ ] Complete product multi-spec selection function
+[ ] Support night mode
+
 ## Feedback and Suggestions
 
 If you have a better idea or you want to participate in this project ,Welcome to PR!

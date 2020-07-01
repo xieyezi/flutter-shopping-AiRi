@@ -48,7 +48,7 @@ DEPENDENCIES:
   - webview_flutter (from `.symlinks/plugins/webview_flutter/ios`)
 
 SPEC REPOS:
-  https://cdn.cocoapods.org/:
+  trunk:
     - FMDB
 
 EXTERNAL SOURCES:
