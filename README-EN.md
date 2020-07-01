@@ -1,20 +1,22 @@
 # AiRi
 
-Language: [English](README-EN.md) | 中文简体
+Language: English | [中文简体](https://github.com/xieyezi/flutter-shopping-ArRi)
 
-本项目为个人学习 Flutter 的练习项目。
+This project is a personal practice project for learning Flutter.
 
-这是一个购物 APP，涵盖了购物 APP 的常见功能。
-通过设置、修改、组合自带部件以及自定义来实现具体的设计效果，满足日常开发的需求。  
-这个项目还在持续迭代中，喜欢就给个小 🌟🌟 吧
+This is a shopping APP, covering the common functions of the shopping APP.
 
-## 回馈和建议
+Realize specific design effects by setting, modifying, combining self-contained parts and customizing to meet the needs of daily development.
 
-如果你有更好的想法或者你想参与到这个项目中来，欢迎提交PR!!
+This project is still in continuous iteration, just give 🌟🌟 if you like it !
 
-## 预览
+## Feedback and Suggestions
 
-部分页面效果如下：
+If you have a better idea or you want to participate in this project ,Welcome to PR!
+
+## Preview
+
+The effect of some pages is as follows:
 
 | ![](./screenshot/Screenshot_1.png)  | ![](./screenshot/Screenshot_2.png)  | ![](./screenshot/Screenshot_3.png)  | ![](./screenshot/Screenshot_4.png)  |
 | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: |
