@@ -1,7 +1,5 @@
 import 'package:AiRi/components/bottom_button.dart';
 import 'package:AiRi/pages/main/main_provider.dart';
-import 'package:AiRi/pages/order/order_page.dart';
-import 'package:AiRi/pages/order_detail/order_detail_page.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_dialog.dart';
 import 'package:AiRi/utils/my_navigator.dart';
@@ -34,8 +32,7 @@ class PayPage extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: 0.0, top: 20),
                     child: Text(
                       '确认放弃支付吗？',
-                      style:
-                          TextStyle(color: Color(0xFF4A4A4A), fontSize: 14.0),
+                      style: TextStyle(color: Color(0xFF4A4A4A), fontSize: 14.0),
                     ),
                   ),
                 ],
@@ -77,8 +74,7 @@ class PayPageContainer extends StatelessWidget {
           Container(
             width: double.infinity,
             height: double.infinity,
-            margin: EdgeInsets.only(
-                bottom: 70 + MediaQuery.of(context).padding.bottom),
+            margin: EdgeInsets.only(bottom: 70 + MediaQuery.of(context).padding.bottom),
             child: SingleChildScrollView(
               physics: AlwaysScrollableScrollPhysics(),
               child: Column(
@@ -115,14 +111,12 @@ class PayPageContainer extends StatelessWidget {
             content: Center(
               child: Column(
                 children: <Widget>[
-                  Image.asset(
-                      'assets/images/confirm_order/dingdanchenggong.png'),
+                  Image.asset('assets/images/confirm_order/dingdanchenggong.png'),
                   Container(
-                    padding: EdgeInsets.only(bottom: 0.0, top: 20),
+                    padding: EdgeInsets.only(bottom: 0.0, top: 10),
                     child: Text(
                       '支付成功',
-                      style:
-                          TextStyle(color: Color(0xFF4A4A4A), fontSize: 14.0),
+                      style: TextStyle(color: Color(0xFF4A4A4A), fontSize: 14.0),
                     ),
                   ),
                 ],
@@ -134,8 +128,7 @@ class PayPageContainer extends StatelessWidget {
             isCancel: true,
             confirmCallback: () {
               // 查看订单
-              final mainProvder =
-                  Provider.of<MainProvider>(context, listen: false);
+              final mainProvder = Provider.of<MainProvider>(context, listen: false);
               mainProvder.setTabBarSelectedIndex = 1;
             },
             dismissCallback: () {
