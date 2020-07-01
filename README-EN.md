@@ -19,6 +19,14 @@ Realize specific design effects by setting, modifying, combining self-contained 
 
 This project is still in continuous iteration, just give 🌟🌟 if you like it !
 
+## Operating environment
+
+```
+1. Flutter version 1.17.0
+2. Dart version 2.8.1
+```
+
+
 ## Next Plan
 
 - [ ]  Organize project folders and optimize code
