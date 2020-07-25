@@ -30,7 +30,7 @@ class OrderItem extends StatelessWidget {
   /// 供应商名字
   Widget _buildSupplierName() {
     return Text(
-      '供应商名字',
+      '优衣库',
       style: TextStyle(
         color: Color(0xFF121212),
         fontSize: 14,
@@ -129,7 +129,7 @@ class OrderItem extends StatelessWidget {
           ),
           RichText(
             text: TextSpan(
-                text: '（协商前）采购总价',
+                text: '总价',
                 style: TextStyle(
                   color: Color(0xFF9B9B9B),
                   fontSize: 12,

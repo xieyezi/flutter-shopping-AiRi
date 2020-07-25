@@ -1,3 +1,4 @@
+import 'package:AiRi/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_splash_screen/flutter_splash_screen.dart';
@@ -55,7 +56,8 @@ class _MainPageState extends State<MainPage>
           HomePage(),
           CategoryPage(),
           OrderPage(),
-          ManagePage()
+          // ManagePage()
+          LoginPage(),
         ],
         physics: NeverScrollableScrollPhysics(),
       ),

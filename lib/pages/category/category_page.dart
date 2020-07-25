@@ -23,7 +23,7 @@ class CategoryPage extends StatelessWidget {
       child: BaseScaffold(
         leadType: AppBarBackType.None,
         actions: <Widget>[AppBarShopCartIconButton()],
-        title: '商品分类',
+        title: '分类',
         body: Category(),
       ),
     );

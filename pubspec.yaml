@@ -59,6 +59,8 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
+    # LOGO
+    - assets/images/logo.png
     # 导航栏
     - assets/images/nav/nav_back.png
     # tab bar
@@ -70,7 +72,7 @@ flutter:
     - assets/images/tabbar/dingdan_off.png
     - assets/images/tabbar/guanli_ON.png
     - assets/images/tabbar/guanli_off.png
-    
+
     # 首页
     - assets/images/home/gouwuche.png
     - assets/images/home/sousuo.png
@@ -79,7 +81,7 @@ flutter:
     - assets/images/home/fenxiang.png
     - assets/images/home/lianxi.png
     - assets/images/home/shop.png
-    
+
     # 详情页
     - assets/images/detail/up.png
     - assets/images/detail/dowm.png
@@ -114,6 +116,10 @@ flutter:
     # 确认订单页面
     - assets/images/confirm_order/edit.png
     - assets/images/confirm_order/dingdanchenggong.png
+
+    # 登录页面
+    - assets/images/login/phone.png
+    - assets/images/login/password.png
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see

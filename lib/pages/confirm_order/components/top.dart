@@ -67,7 +67,7 @@ class Top extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width - 130,
               child: Text(
-                '重庆  重庆市 渝北区 天宫街道华夏宗申店21-6号地重庆  重庆市 渝北区地址',
+                '重庆  重庆市 渝北区 天宫街道万达广场店21-6号地重庆  重庆市 渝北区地址',
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: leftText,
