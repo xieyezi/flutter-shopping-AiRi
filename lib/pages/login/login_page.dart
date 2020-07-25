@@ -1,8 +1,12 @@
 import 'package:AiRi/components/base_scaffold.dart';
 import 'package:AiRi/components/bottom_button.dart';
 import 'package:AiRi/components/my_app_bar.dart';
+import 'package:AiRi/pages/home/home_page.dart';
+import 'package:AiRi/pages/main/main_provider.dart';
 import 'package:AiRi/utils/my_dialog.dart';
+import 'package:AiRi/utils/my_navigator.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../styles/colors.dart';
 
 class LoginPage extends StatefulWidget {
@@ -39,9 +43,11 @@ class _LoginFormState extends State<LoginPage> {
   void _loginAction(BuildContext context) async {
     if ((_formKey.currentState as FormState).validate()) {
       // 验证通过表示已经登录成功
+      final mainProvder = Provider.of<MainProvider>(context, listen: false);
       MyDialog.showLoading('', barrier: true);
       await Future.delayed(Duration(seconds: 2), () {});
       MyDialog.hideLoading();
+      mainProvder.setTabBarSelectedIndex = 0;
     }
   }
 
