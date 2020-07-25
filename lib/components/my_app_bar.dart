@@ -17,10 +17,12 @@ class MyAppBar extends AppBar implements PreferredSizeWidget {
       Brightness brightness,
       Color backgroundColor,
       List<Widget> actions,
+      bool centerTitle = false,
       double elevation})
       : super(
           key: key,
           title: title,
+          centerTitle: centerTitle,
           brightness: brightness ?? Brightness.light,
           backgroundColor: backgroundColor ?? Color(0xfffefefe),
           leading: leading ??

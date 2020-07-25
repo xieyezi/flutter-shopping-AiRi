@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage>
         leadType: AppBarBackType.None,
         actions: <Widget>[AppBarShopCartIconButton()],
         title: '首页',
+        centerTitle: true,
         body: HomePageContainer(),
       ),
     );
