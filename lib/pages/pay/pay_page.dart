@@ -1,12 +1,8 @@
-import 'package:AiRi/components/bottom_button.dart';
-import 'package:AiRi/pages/main/main_provider.dart';
+import 'package:AiRi/components/components.dart';
+import 'package:AiRi/pages/main/store/main_provider.dart';
 import 'package:AiRi/styles/colors.dart';
-import 'package:AiRi/utils/my_dialog.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/components/base_scaffold.dart';
-import 'package:AiRi/components/custom_dialog.dart';
-import 'package:AiRi/components/my_app_bar.dart';
 import 'package:provider/provider.dart';
 import 'components/middle.dart';
 import 'components/top.dart';

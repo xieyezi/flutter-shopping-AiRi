@@ -1,8 +1,7 @@
+import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
-import 'package:AiRi/components/base_scaffold.dart';
-import 'package:AiRi/components/empty.dart';
 import 'package:AiRi/pages/shopping_cart/store/shopping_cart_provider.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';

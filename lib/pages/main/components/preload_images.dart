@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-/* 预加载必须图片-可以解决首次点击闪烁问题(一般人也看不出来，洁癖专用) */
+/* 预加载图片*/
 class PreloadImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

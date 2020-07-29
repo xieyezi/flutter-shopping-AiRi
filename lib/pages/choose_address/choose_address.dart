@@ -1,7 +1,5 @@
+import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/components/base_scaffold.dart';
-import 'package:AiRi/components/my_app_bar.dart';
-import 'package:AiRi/components/my_divider.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 
 class ChooseAddress extends StatelessWidget {

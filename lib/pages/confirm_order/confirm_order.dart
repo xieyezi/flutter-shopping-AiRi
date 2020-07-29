@@ -1,7 +1,6 @@
+import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:AiRi/components/base_scaffold.dart';
-import 'package:AiRi/components/my_app_bar.dart';
 import 'package:AiRi/pages/shopping_cart/store/shopping_cart_provider.dart';
 import 'components/bottom.dart';
 import 'components/order_item.dart';

@@ -7,7 +7,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'pages/main/main_page.dart';
-import 'pages/main/main_provider.dart';
+import 'pages/main/store/main_provider.dart';
 import 'pages/shopping_cart/store/shopping_cart_global_provider.dart';
 
 void main() => runApp(MultiProvider(

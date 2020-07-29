@@ -1,5 +1,5 @@
+import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/components/custom_dialog.dart';
 import 'package:AiRi/pages/choose_address/choose_address.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';

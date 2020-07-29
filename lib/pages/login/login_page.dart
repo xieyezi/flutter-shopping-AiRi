@@ -1,13 +1,9 @@
-import 'package:AiRi/components/base_scaffold.dart';
-import 'package:AiRi/components/bottom_button.dart';
-import 'package:AiRi/components/my_app_bar.dart';
-import 'package:AiRi/pages/home/home_page.dart';
-import 'package:AiRi/pages/main/main_provider.dart';
-import 'package:AiRi/utils/my_dialog.dart';
-import 'package:AiRi/utils/my_navigator.dart';
+
+import 'package:AiRi/components/components.dart';
+import 'package:AiRi/pages/main/store/main_provider.dart';
+import 'package:AiRi/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../styles/colors.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
@@ -159,7 +155,7 @@ class _LoginFormState extends State<LoginPage> {
     );
   }
 
-  // 手机号码
+  // 号码
   Widget _buildPhoneInput() {
     return TextFormField(
         controller: _unameController,

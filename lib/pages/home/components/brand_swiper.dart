@@ -1,11 +1,11 @@
-import 'package:AiRi/components/my_cahenetwork_image.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:AiRi/components/components.dart';
+import 'package:AiRi/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:AiRi/components/left_title.dart';
 import 'package:AiRi/model/home.dart';
 import 'package:AiRi/pages/supplier/supplier_page.dart';
 import 'package:AiRi/utils/my_navigator.dart';
-import '../../../styles/colors.dart';
+
 
 class BrandSwiper extends StatelessWidget {
   final List<BrandListElement> brandList;

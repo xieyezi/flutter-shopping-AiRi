@@ -1,10 +1,6 @@
+import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:share/share.dart';
-import 'package:AiRi/components/base_scaffold.dart';
-import 'package:AiRi/components/my_app_bar.dart';
-import 'package:AiRi/components/my_divider.dart';
-import 'package:AiRi/components/my_loading.dart';
 import 'package:AiRi/pages/detail/components/Introduction_configuration.dart';
 import 'package:AiRi/pages/detail/store/detail_page_provider.dart';
 import 'package:AiRi/styles/colors.dart';

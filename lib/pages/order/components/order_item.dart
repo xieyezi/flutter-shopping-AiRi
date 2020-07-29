@@ -1,7 +1,7 @@
+import 'package:AiRi/components/components.dart';
 import 'package:AiRi/pages/order_detail/order_detail_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/components/custom_dialog.dart';
 import 'package:AiRi/pages/pay/pay_page.dart';
 import 'package:AiRi/pages/supplier/supplier_page.dart';
 import 'package:AiRi/styles/colors.dart';
