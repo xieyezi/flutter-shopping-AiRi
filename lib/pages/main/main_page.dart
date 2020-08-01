@@ -1,5 +1,5 @@
-import 'package:AiRi/pages/login/login_page.dart';
 import 'package:AiRi/pages/main/components/my_bottom_navigation_bar.dart';
+import 'package:AiRi/pages/manage/manage_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_splash_screen/flutter_splash_screen.dart';
@@ -54,8 +54,7 @@ class _MainPageState extends State<MainPage>
           HomePage(),
           CategoryPage(),
           OrderPage(),
-          // ManagePage()
-          LoginPage(),
+          ManagePage()
         ],
         physics: NeverScrollableScrollPhysics(),
       ),

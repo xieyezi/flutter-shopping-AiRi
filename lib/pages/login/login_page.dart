@@ -1,9 +1,8 @@
-
 import 'package:AiRi/components/components.dart';
-import 'package:AiRi/pages/main/store/main_provider.dart';
+import 'package:AiRi/pages/main/main_page.dart';
 import 'package:AiRi/styles/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
@@ -39,11 +38,14 @@ class _LoginFormState extends State<LoginPage> {
   void _loginAction(BuildContext context) async {
     if ((_formKey.currentState as FormState).validate()) {
       // 验证通过表示已经登录成功
-      final mainProvder = Provider.of<MainProvider>(context, listen: false);
-      MyDialog.showLoading('', barrier: true);
-      await Future.delayed(Duration(seconds: 2), () {});
-      MyDialog.hideLoading();
-      mainProvder.setTabBarSelectedIndex = 0;
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setBool('isLogin', true);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext ctx) => MainPage(),
+        ),
+      );
     }
   }
 
@@ -89,7 +91,10 @@ class _LoginFormState extends State<LoginPage> {
                         Text(
                           'AiRi',
                           style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.normal),
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.primaryColor,
+                          ),
                         ),
                       ]),
                 ),
