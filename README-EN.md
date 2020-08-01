@@ -29,8 +29,8 @@ This project is still in continuous iteration, just give 🌟🌟 if you like it
 
 ## Next Plan
 
-- [ ]  Organize project folders and optimize code
-- [ ]  Complete the login page
+- [x]  Organize project folders and optimize code
+- [x]  Complete the login page
 - [ ]  Complete product multi-spec selection function
 - [ ]  Support night mode
 
