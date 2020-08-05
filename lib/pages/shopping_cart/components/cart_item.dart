@@ -336,12 +336,16 @@ class Content extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   GestureDetector(
-                      behavior: HitTestBehavior.translucent,
-                      onTap: () => addOneGoodItem(goodData, -1),
-                      child: Icon(Icons.remove,
-                          color: goodData.count == 1
-                              ? Colors.grey[300]
-                              : Colors.red[300])),
+                    behavior: HitTestBehavior.translucent,
+                    onTap: () => addOneGoodItem(goodData, -1),
+                    child: Container(
+                        width: 36,
+                        height: 36,
+                        child: Icon(Icons.remove,
+                            color: goodData.count == 1
+                                ? Colors.grey[300]
+                                : Colors.red[300])),
+                  ),
                   Container(
                     width: 45.0,
                     height: 28.0,
@@ -361,6 +365,8 @@ class Content extends StatelessWidget {
                     behavior: HitTestBehavior.translucent,
                     onTap: () => addOneGoodItem(goodData, 1),
                     child: Container(
+                      width: 36,
+                      height: 36,
                       padding: EdgeInsets.only(right: 10),
                       child: Icon(
                         Icons.add,
