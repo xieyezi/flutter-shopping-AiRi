@@ -16,6 +16,7 @@ class _ManagePageState extends State<ManagePage> {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
+      centerTitle: true,
       title: "管理",
       leadType: AppBarBackType.None,
       actions: <Widget>[AppBarShopCartIconButton()],

@@ -37,6 +37,7 @@ class _OrderPageState extends State<OrderPage>
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
+      centerTitle: true,
       leadType: AppBarBackType.None,
       actions: <Widget>[AppBarShopCartIconButton()],
       title: '订单',

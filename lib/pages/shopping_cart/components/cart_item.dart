@@ -336,16 +336,12 @@ class Content extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   GestureDetector(
-                    behavior: HitTestBehavior.translucent,
-                    onTap: () => addOneGoodItem(goodData, -1),
-                    child: Image.asset(
-                      goodData.count == 1
-                          ? 'assets/images/shopping_cart/down1.png'
-                          : 'assets/images/shopping_cart/down.png',
-                      width: 36.0,
-                      height: 28.0,
-                    ),
-                  ),
+                      behavior: HitTestBehavior.translucent,
+                      onTap: () => addOneGoodItem(goodData, -1),
+                      child: Icon(Icons.remove,
+                          color: goodData.count == 1
+                              ? Colors.grey[300]
+                              : Colors.red[300])),
                   Container(
                     width: 45.0,
                     height: 28.0,
@@ -366,10 +362,9 @@ class Content extends StatelessWidget {
                     onTap: () => addOneGoodItem(goodData, 1),
                     child: Container(
                       padding: EdgeInsets.only(right: 10),
-                      child: Image.asset(
-                        'assets/images/shopping_cart/up.png',
-                        width: 36.0,
-                        height: 28.0,
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.red[300],
                       ),
                     ),
                   ),

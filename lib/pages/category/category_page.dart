@@ -21,6 +21,7 @@ class CategoryPage extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => CateGoryPageProvider(),
       child: BaseScaffold(
+        centerTitle: true,
         leadType: AppBarBackType.None,
         actions: <Widget>[AppBarShopCartIconButton()],
         title: '商品分类',

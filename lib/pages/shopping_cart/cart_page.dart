@@ -23,6 +23,7 @@ class _CartPageState extends State<CartPage> {
       create: (_) => _provider,
       child: BaseScaffold(
         title: '购物车',
+        centerTitle: true,
         actions: <Widget>[
           Selector<ShopingCartProvider, Tuple2<Function, bool>>(
             builder: (_, tuple, __) {
