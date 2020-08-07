@@ -1,8 +1,13 @@
 import 'package:AiRi/components/components.dart';
 import 'package:AiRi/components/my_app_bar.dart';
+import 'package:AiRi/model/goods.dart';
+import 'package:AiRi/pages/manage/store/manage_page_provider.dart';
 import 'package:AiRi/styles/colors.dart';
+import 'package:AiRi/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:AiRi/components/base_scaffold.dart';
+import 'package:provider/provider.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class ManagePage extends StatelessWidget {
   final String supplierId;
@@ -10,14 +15,28 @@ class ManagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseScaffold(
-      appBar: MyAppBar(
-        brightness: Brightness.dark,
-        leadingType: AppBarBackType.None,
-        backgroundColor: AppColors.supplierColor1,
-        title: null,
+    return ChangeNotifierProvider(
+      create: (_) => ManagePageProvider(),
+      child: BaseScaffold(
+        appBar: MyAppBar(
+          brightness: Brightness.dark,
+          leadingType: AppBarBackType.None,
+          backgroundColor: AppColors.supplierColor1,
+          actions: <Widget>[
+            Container(
+              padding: EdgeInsets.only(right: 15),
+              child: Row(
+                children: <Widget>[
+                  Icon(Iconfont.settings),
+                  SizedBox(width: 15),
+                  Icon(Iconfont.notice),
+                ],
+              ),
+            )
+          ],
+        ),
+        body: ManageContainer(),
       ),
-      body: ManageContainer(),
     );
   }
 }
@@ -27,58 +46,30 @@ class ManageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final state = Provider.of<ManagePageProvider>(context);
     return Container(
       color: AppColors.primaryBackground,
-      height: double.infinity,
-      child: Stack(
-        children: <Widget>[
-          _buildTop(context),
-          Container(
-            height: 140,
-            margin: EdgeInsets.only(top: 90, left: 10, right: 10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Column(
-              children: <Widget>[
-                Container(
-                  padding: EdgeInsets.only(top: 10),
-                  child: LeftTitle(title: '我的功能'),
-                )
-              ],
-            ),
-          ),
-          Container(
-            height: 80,
-            width: MediaQuery.of(context).size.width - 20,
-            margin: EdgeInsets.only(top: 250, left: 10, right: 10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Image.network(
-              'https://gw.alicdn.com/imgextra/i3/43/O1CN01ZPUEId1CBjWPLKzea_!!43-0-lubanu.jpg',
-              fit: BoxFit.fitWidth,
-            ),
-          ),
-          Container(
-            height: 200,
-            margin: EdgeInsets.only(top: 350, left: 10, right: 10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Column(
-              children: <Widget>[
-                Container(
-                  padding: EdgeInsets.only(top: 10),
-                  child: LeftTitle(title: '更多工具'),
-                )
-              ],
-            ),
-          )
-        ],
+      child: SmartRefresher(
+        controller: state.refreshController,
+        enablePullUp: true,
+        enablePullDown: false,
+        onLoading: state.loadData,
+        footer: MyCustomFooter(),
+        child: CustomScrollView(
+          slivers: <Widget>[
+                SliverToBoxAdapter(
+                  child: Stack(
+                    children: <Widget>[
+                      _buildTop(context),
+                      _buildFunc(),
+                      _buildImageRecommend(context),
+                      _buildMoreFunc(),
+                    ],
+                  ),
+                ),
+              ] +
+              _hotCommodity(state.hotList),
+        ),
       ),
     );
   }
@@ -96,46 +87,263 @@ class ManageContainer extends StatelessWidget {
           end: Alignment.bottomCenter,
           colors: [AppColors.supplierColor1, AppColors.supplierColor2],
         ),
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
+        borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
       ),
-      child: Align(
-        alignment: Alignment.topLeft,
-        child: Container(
-          height: 70,
-          width: 300,
-          child: Row(
-            children: <Widget>[
-              Container(
-                height: 70,
-                width: 70,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            height: 70,
+            child: Row(
+              children: <Widget>[
+                Container(
+                  height: 70,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Image.network(
+                    'https://yanxuan.nosdn.127.net/4cb504b640d917efcccf5fe6c73f6428.png',
+                    height: 80,
+                    width: 80,
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 16, left: 8),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        '觉非',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Divider(height: 5),
+                      Text('填写兴趣更懂你哦～',
+                          style: TextStyle(color: Colors.white, fontSize: 14)),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            width: 100,
+            height: 70,
+            child: Center(
+              child: Container(
+                height: 40,
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50),
+                  color: AppColors.splashColor,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      bottomLeft: Radius.circular(20)),
                 ),
-                child: Image.network(
-                  'https://yanxuan.nosdn.127.net/4cb504b640d917efcccf5fe6c73f6428.png',
-                  height: 80,
-                  width: 80,
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 16, left: 8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
+                    Icon(Iconfont.redpacket_fil,
+                        color: AppColors.buyNow2, size: 18),
                     Text(
-                      '觉非',
-                      style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
-                    ),
-                    Divider(height: 5),
-                    Text('填写兴趣更懂你哦～', style: TextStyle(color: Colors.white, fontSize: 14)),
+                      '每日签到',
+                      style:
+                          TextStyle(color: AppColors.primaryText, fontSize: 12),
+                    )
                   ],
                 ),
-              )
-            ],
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  /// 我的功能
+  Widget _buildFunc() {
+    return Container(
+      height: 130,
+      margin: EdgeInsets.only(top: 90, left: 10, right: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.only(top: 10, bottom: 10),
+            child: LeftTitle(title: '我的功能'),
           ),
+          MyDivider(),
+          Container(
+            padding: EdgeInsets.only(left: 15, right: 15, top: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Icon(
+                      Iconfont.ticket_fill,
+                      color: AppColors.primaryColor,
+                      size: 30,
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      '优惠券',
+                      style:
+                          TextStyle(color: AppColors.primaryText, fontSize: 12),
+                    )
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Icon(
+                      Iconfont.redpacket_fil,
+                      color: AppColors.primaryColor,
+                      size: 30,
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      '红包',
+                      style:
+                          TextStyle(color: AppColors.primaryText, fontSize: 12),
+                    )
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Icon(
+                      Iconfont.round_like_fill,
+                      color: AppColors.primaryColor,
+                      size: 30,
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      '我的收藏',
+                      style:
+                          TextStyle(color: AppColors.primaryText, fontSize: 12),
+                    )
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Icon(
+                      Iconfont.card_fill,
+                      color: AppColors.primaryColor,
+                      size: 30,
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      '银行卡',
+                      style:
+                          TextStyle(color: AppColors.primaryText, fontSize: 12),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  /// 图片推荐
+  Widget _buildImageRecommend(BuildContext context) {
+    return Container(
+      height: 80,
+      width: MediaQuery.of(context).size.width - 20,
+      margin: EdgeInsets.only(top: 230, left: 10, right: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image.network(
+          'https://gw.alicdn.com/imgextra/i3/43/O1CN01ZPUEId1CBjWPLKzea_!!43-0-lubanu.jpg',
+          fit: BoxFit.fitWidth,
         ),
       ),
     );
+  }
+
+  /// 更多工具
+  Widget _buildMoreFunc() {
+    return Container(
+      height: 150,
+      margin: EdgeInsets.only(top: 320, left: 10, right: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.only(top: 10),
+            child: LeftTitle(title: '更多工具'),
+          )
+        ],
+      ),
+    );
+  }
+
+  /// 热销商品区域
+  List<Widget> _hotCommodity(List<GoodsList> hotList) {
+    return [
+      SliverToBoxAdapter(
+        child: Container(
+          height: 44,
+          padding: EdgeInsets.only(left: 15),
+          decoration: BoxDecoration(
+            color: AppColors.primaryBackground,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(5),
+              topRight: Radius.circular(5),
+            ),
+          ),
+          child: LeftTitle(
+            tipColor: AppColors.primaryColor,
+            title: '专属推荐',
+          ),
+        ),
+      ),
+      SliverToBoxAdapter(
+        child: Container(
+          padding: EdgeInsets.only(left: 15, right: 15),
+          child: Wrap(
+            spacing: 8.0, // 主轴(水平)方向间距
+            runSpacing: 10.0, // 纵轴（垂直）方向间距
+            alignment: WrapAlignment.start, //沿主轴方向居中
+            direction: Axis.horizontal,
+            children: hotList.map<Widget>(
+              (item) {
+                return CommdityItemHome(goodData: item);
+              },
+            ).toList(),
+          ),
+        ),
+      ),
+      SliverToBoxAdapter(
+        child: Container(
+          margin: EdgeInsets.only(left: 15, right: 15),
+          height: 15,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(5),
+              bottomRight: Radius.circular(5),
+            ),
+          ),
+          child: null,
+        ),
+      ),
+    ];
   }
 }

@@ -4,7 +4,7 @@ description: A Flutter AiRi.
 version: 0.0.2
 
 environment:
-  sdk: '>=2.2.0 <3.0.0'
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -107,6 +107,13 @@ flutter:
     # 登录页面
     - assets/images/login/phone.png
     - assets/images/login/password.png
+
+    # 字体图标
+  # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Iconfont
+      fonts:
+        - asset: assets/fonts/iconfont.ttf
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
