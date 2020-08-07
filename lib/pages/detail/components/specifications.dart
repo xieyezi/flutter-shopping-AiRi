@@ -1,8 +1,7 @@
 import 'package:AiRi/components/bottom_button.dart';
-import 'package:AiRi/utils/my_navigator.dart';
+import 'package:AiRi/components/components.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/components/my_divider.dart';
 import 'package:AiRi/model/detail.dart';
 import 'package:AiRi/styles/colors.dart';
 

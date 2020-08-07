@@ -1,5 +1,4 @@
-import 'package:AiRi/components/my_cahenetwork_image.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'header_swiper_pagination.dart';

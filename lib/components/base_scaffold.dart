@@ -14,7 +14,7 @@ class BaseScaffold extends Scaffold {
       Widget floatingActionButton,
       Color appBarBackgroundColor = Colors.white,
       Color titleColor,
-      bool centerTitle = false,
+      bool centerTitle = true,
       FloatingActionButtonLocation floatingActionButtonLocation})
       : super(
           appBar: appBar ??

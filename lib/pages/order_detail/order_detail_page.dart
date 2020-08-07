@@ -1,10 +1,9 @@
-import 'package:AiRi/components/bottom_button.dart';
-import 'package:AiRi/components/custom_dialog.dart';
+
+import 'package:AiRi/components/components.dart';
 import 'package:AiRi/pages/pay/pay_page.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/components/base_scaffold.dart';
 import 'package:AiRi/pages/order_detail/components/address.dart';
 import 'package:AiRi/pages/order_detail/components/delivery.dart';
 import 'components/info.dart';

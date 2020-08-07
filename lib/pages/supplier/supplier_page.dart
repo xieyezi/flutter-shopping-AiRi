@@ -30,6 +30,7 @@ class SupplierPage extends StatelessWidget {
           leadingType: AppBarBackType.Back,
           leading: AppBarBack(AppBarBackType.Back, color: Colors.white),
           backgroundColor: AppColors.supplierColor1,
+          centerTitle: true,
           title: MyTitle('优衣库', color: Colors.white),
         ),
         body: SupplierContainer(),

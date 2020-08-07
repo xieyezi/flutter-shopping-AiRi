@@ -1,15 +1,14 @@
+import 'package:AiRi/pages/main/components/my_bottom_navigation_bar.dart';
+import 'package:AiRi/pages/manage/manage_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_splash_screen/flutter_splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:AiRi/pages/category/category_page.dart';
-import 'package:AiRi/pages/manage/manage_page.dart';
 import 'package:AiRi/pages/order/order_page.dart';
 import 'package:AiRi/utils/my_navigator.dart';
-
 import '../home/home_page.dart';
-import 'main_provider.dart';
-import 'my_bottom_navigation_bar.dart';
+import 'store/main_provider.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -38,7 +37,7 @@ class _MainPageState extends State<MainPage>
     // 保存 ctx
     MyNavigator.ctx = context;
 
-    /// 默认根据iphone X 高度适配,高度去掉 顶部、底部
+    /// 根据iphone X 高度适配,高度去掉 顶部、底部
     ScreenUtil.init(context,
         width: 375, height: 812 - 44 - 34, allowFontScaling: true);
     return Scaffold(

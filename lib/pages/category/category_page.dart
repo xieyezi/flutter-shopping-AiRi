@@ -1,15 +1,10 @@
+import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:AiRi/components/appbar_shopcart_button.dart';
-import 'package:AiRi/components/base_scaffold.dart';
-import 'package:AiRi/components/my_app_bar.dart';
-import 'package:AiRi/components/my_loading.dart';
-import 'package:AiRi/components/search_bar.dart';
 import 'package:AiRi/pages/category/store/category_page_provider.dart';
 import 'package:AiRi/pages/search/search_page.dart';
 import 'package:AiRi/utils/my_navigator.dart';
-
 import 'components/menue.dart';
 import 'components/right_list_view.dart';
 
@@ -24,7 +19,7 @@ class CategoryPage extends StatelessWidget {
         centerTitle: true,
         leadType: AppBarBackType.None,
         actions: <Widget>[AppBarShopCartIconButton()],
-        title: '商品分类',
+        title: '分类',
         body: Category(),
       ),
     );

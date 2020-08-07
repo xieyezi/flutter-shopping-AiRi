@@ -1,12 +1,9 @@
+import 'package:AiRi/components/components.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:underline_indicator/underline_indicator.dart';
-import 'package:AiRi/components/appbar_shopcart_button.dart';
-import 'package:AiRi/components/base_scaffold.dart';
-import 'package:AiRi/components/empty.dart';
-import 'package:AiRi/components/my_app_bar.dart';
-import 'package:AiRi/pages/main/main_provider.dart';
+import 'package:AiRi/pages/main/store/main_provider.dart';
 import 'package:AiRi/pages/order/components/order_item.dart';
 
 class OrderPage extends StatefulWidget {

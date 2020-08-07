@@ -1,32 +1,48 @@
+import 'dart:io';
+import 'package:AiRi/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:oktoast/oktoast.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:AiRi/styles/colors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'pages/main/main_page.dart';
-import 'pages/main/main_provider.dart';
+import 'pages/main/store/main_provider.dart';
 import 'pages/shopping_cart/store/shopping_cart_global_provider.dart';
 
-void main() => runApp(MultiProvider(
+Future<void> main() async {
+  // 判断是否已经登录
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool isLogin = prefs.getBool('isLogin') ?? false;
+  print('是否已经登录---' + isLogin.toString());
+  runApp(
+    MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => MainProvider()),
         ChangeNotifierProvider(create: (_) => ShopingCartGlobalProvider()),
       ],
-      child: MyApp(),
-    ));
+      child: MyApp(
+        isLogin: isLogin,
+      ),
+    ),
+  );
+  // 透明状态栏
+  if (Platform.isAndroid) {
+    SystemUiOverlayStyle systemUiOverlayStyle =
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+  }
+}
 
 class MyApp extends StatelessWidget {
+  final isLogin;
+  const MyApp({Key key, this.isLogin}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    // android 状态栏为透明的沉浸
-    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark);
-    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-
     return OKToast(
       child: RefreshConfiguration(
         hideFooterWhenNotFull: true, // Viewport不满一屏时,禁用上拉加载更多功能
@@ -44,7 +60,6 @@ class MyApp extends StatelessWidget {
           ],
           localeResolutionCallback:
               (Locale locale, Iterable<Locale> supportedLocales) {
-            //print("change language");
             return locale;
           },
           theme: ThemeData(
@@ -53,7 +68,7 @@ class MyApp extends StatelessWidget {
             accentColor: AppColors.primaryColorAccent,
           ),
           debugShowCheckedModeBanner: false,
-          home: MainPage(),
+          home: isLogin ? MainPage() : LoginPage(),
         ),
       ),
     );

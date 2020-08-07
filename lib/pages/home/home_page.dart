@@ -1,20 +1,14 @@
-import 'package:AiRi/components/commdity_item_home.dart';
+
+import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:AiRi/components/appbar_shopcart_button.dart';
-import 'package:AiRi/components/base_scaffold.dart';
-import 'package:AiRi/components/left_title.dart';
-import 'package:AiRi/components/my_app_bar.dart';
-import 'package:AiRi/components/my_custom_footer.dart';
-import 'package:AiRi/components/my_loading.dart';
-import 'package:AiRi/components/search_bar.dart';
 import 'package:AiRi/model/goods.dart';
 import 'package:AiRi/pages/home/components/brand_swiper.dart';
 import 'package:AiRi/pages/home/components/commodity_category.dart';
 import 'package:AiRi/pages/home/components/head_swiper.dart';
 import 'package:AiRi/pages/home/store/home_page_provider.dart';
-import 'package:AiRi/pages/main/preload_images.dart';
+import 'package:AiRi/pages/main/components/preload_images.dart';
 import 'package:AiRi/pages/search/search_page.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';

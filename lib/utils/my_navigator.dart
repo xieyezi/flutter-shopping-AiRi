@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:AiRi/pages/main/main_provider.dart';
+import 'package:AiRi/pages/main/store/main_provider.dart';
 
 class MyNavigator {
   // 设置一次 context 方便后面

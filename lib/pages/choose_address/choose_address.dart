@@ -1,7 +1,5 @@
+import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/components/base_scaffold.dart';
-import 'package:AiRi/components/my_app_bar.dart';
-import 'package:AiRi/components/my_divider.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 
 class ChooseAddress extends StatelessWidget {
@@ -68,7 +66,7 @@ class ChooseAddressContainer extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10),
                 width: MediaQuery.of(context).size.width - 30,
                 child: Text(
-                  '重庆  重庆市 渝北区 天宫街道华夏宗申店21-6号地重庆  重庆市 渝北区地址重庆  重庆市',
+                  '重庆  重庆市 渝北区 新天地中心21-6号地重庆  重庆市 渝北区地址重庆  重庆市',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: addressText,

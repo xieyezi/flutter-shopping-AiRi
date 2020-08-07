@@ -9,7 +9,7 @@ class AppColors {
   static const Color primaryText = Color(0xFF2D3142);
 
   /// 主文本灰色
-  static const Color primaryGreyText = Color(0xFF9C9EB9);
+  static const Color primaryGreyText = Color(0xFF9B9B9B);
 
   /// 主文本灰色
   static const Color primaryGreyText1 = Color(0xFFE0DDF5);
@@ -56,6 +56,7 @@ class AppColors {
 
   /// splashColor
   static const Color splashColor = Color(0xFFE1DDF5);
+
   /// 店铺背景渐变
   static const Color supplierColor1 = Color(0xFF8B63E6);
   static const Color supplierColor2 = Color(0xFF7265E3);

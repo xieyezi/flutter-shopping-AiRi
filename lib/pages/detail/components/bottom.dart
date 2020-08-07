@@ -1,8 +1,8 @@
+import 'package:AiRi/components/components.dart';
 import 'package:AiRi/pages/confirm_order/confirm_order.dart';
 import 'package:AiRi/pages/supplier/supplier_page.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/components/custom_dialog.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:AiRi/components/my_toast.dart';
 import 'package:AiRi/pages/shopping_cart/cart_page.dart';
@@ -40,7 +40,7 @@ class DetailBottom extends StatelessWidget {
     return Row(
       children: <Widget>[
         GestureDetector(
-          onTap: () => MyToast.show('成功加入采购车~'),
+          onTap: () => MyToast.show('成功加入购物车车~'),
           child: Container(
             width: 90,
             height: 40,
@@ -57,7 +57,7 @@ class DetailBottom extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                '加入采购车',
+                '加入购物车',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,
@@ -84,7 +84,7 @@ class DetailBottom extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                '立即采购',
+                '立即购买',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,
@@ -122,7 +122,7 @@ class DetailBottom extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.only(bottom: 20.0),
+                    padding: EdgeInsets.only(bottom: 10.0),
                     child: Text(
                       '联系电话：$contact',
                       style:
@@ -141,7 +141,7 @@ class DetailBottom extends StatelessWidget {
             ),
             confirmContent: '拨打电话',
             isCancel: true,
-            confirmColor: Color(0xFFF5A623),
+            confirmTextColor: AppColors.buyNow1,
             confirmCallback: () {
               _contact();
             },

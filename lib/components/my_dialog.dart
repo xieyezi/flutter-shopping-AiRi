@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-import 'my_navigator.dart';
+import '../utils/my_navigator.dart';
 
 class MyDialog {
   MyDialog._();
