@@ -21,7 +21,7 @@ const List<Map<String, String>> _tabBarData = [
     "selectedImage": "assets/images/tabbar/diangdan_ON.png",
   },
   {
-    "title": "管理",
+    "title": "我的",
     "image": "assets/images/tabbar/guanli_off.png",
     "selectedImage": "assets/images/tabbar/guanli_ON.png",
   }
