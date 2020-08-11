@@ -235,7 +235,7 @@ class Specifications extends StatelessWidget {
           Positioned(
             left: 0,
             right: 0,
-            bottom: 0,
+            bottom: 10,
             child: BottomButton(
               text: '确定',
               handleOk: () => Navigator.pop(context),
@@ -315,7 +315,7 @@ class Specifications extends StatelessWidget {
         isScrollControlled: true,
         elevation: 10,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
         ),
         builder: (BuildContext context) {
           return _buildDialog(context);

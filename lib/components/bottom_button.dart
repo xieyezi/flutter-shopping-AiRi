@@ -16,13 +16,13 @@ class BottomButton extends StatelessWidget {
           left: 10,
           right: 10,
         ),
-        height: 60,
+        height: 40,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             //背景径向渐变
             colors: [AppColors.buttonLine1, AppColors.buttonLine2],
           ),
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(40.0),
         ),
         child: Center(
           child: Text(
