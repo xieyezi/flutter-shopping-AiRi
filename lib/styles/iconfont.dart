@@ -42,4 +42,65 @@ class Iconfont {
     fontFamily: 'Iconfont',
     matchTextDirection: true,
   );
+  ///////
+  static const discover = IconData(
+    0xe67e,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const question = IconData(
+    0xe691,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const game = IconData(
+    0xe6df,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const tian = IconData(
+    0xe748,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const magic = IconData(
+    0xe74c,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const haodian = IconData(
+    0xe76d,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const qi = IconData(
+    0xe76f,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const shuang11 = IconData(
+    0xe782,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const shop_light = IconData(
+    0xe7b8,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const we_fill_light = IconData(
+    0xe7d8,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const news_light = IconData(
+    0xe7e6,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
+  static const sports = IconData(
+    0xe7f1,
+    fontFamily: 'Iconfont',
+    matchTextDirection: true,
+  );
 }
