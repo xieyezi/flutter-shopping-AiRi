@@ -2,9 +2,13 @@
 
 Language: 中文简体 | [English](README-EN.md)
 
+下载apk请点击[这里](https://github.com/xieyezi/flutter-shopping-AiRi/blob/master/apk/app-release.apk?raw=trueg)
 
+
+
+## 更新
+- 添加apk文件
 -  ~~项目采用了mock 接口，目前mock接口已挂，正在修复，请知悉~~(已修复)
-
 
 ## 本项目的UI 有著作权，禁止商用！！（仅用作学习交流)，如若用作商业用途，后果自负！！！
 
