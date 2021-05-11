@@ -4,10 +4,6 @@ Language: 中文简体 | [English](README-EN.md)
 
 下载apk请点击[这里](https://github.com/xieyezi/flutter-shopping-AiRi/blob/master/apk/app-release.apk?raw=trueg)
 
-### 各位小伙伴大家好，鉴于flutter 版本已升级到1.22版本，已有较大更新，许多API和用法都已经改变，所以决定重构此项目。最新的分支我会放在 `feat/last-veriosn` 分支。想参与的小伙伴，可以通过gitub-issees的方法联系我～
-
-
-
 ### 更新
 - 添加apk文件
 -  ~~项目采用了mock 接口，目前mock接口已挂，正在修复中...~~(已修复)
