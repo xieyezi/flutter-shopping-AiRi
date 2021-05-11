@@ -18,26 +18,30 @@ class ManagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => ManagePageProvider(),
-      child: BaseScaffold(
-        appBar: MyAppBar(
-          brightness: Brightness.dark,
-          leadingType: AppBarBackType.None,
-          backgroundColor: AppColors.supplierColor1,
-          actions: <Widget>[
-            Container(
-              padding: EdgeInsets.only(right: 15),
-              child: Row(
-                children: <Widget>[
-                  Icon(Iconfont.settings),
-                  SizedBox(width: 15),
-                  Icon(Iconfont.notice),
-                ],
-              ),
-            )
-          ],
-        ),
+      child: Scaffold(
         body: ManageContainer(),
+        backgroundColor: AppColors.supplierColor1,
       ),
+      // child: BaseScaffold(
+      //   appBar: MyAppBar(
+      //     brightness: Brightness.dark,
+      //     leadingType: AppBarBackType.None,
+      //     backgroundColor: AppColors.supplierColor1,
+      //     actions: <Widget>[
+      //       Container(
+      //         padding: EdgeInsets.only(right: 15),
+      //         child: Row(
+      //           children: <Widget>[
+      //             Icon(Iconfont.settings),
+      //             SizedBox(width: 15),
+      //             Icon(Iconfont.notice),
+      //           ],
+      //         ),
+      //       )
+      //     ],
+      //   ),
+      //   body: ManageContainer(),
+      // ),
     );
   }
 }
@@ -62,9 +66,9 @@ class ManageContainer extends StatelessWidget {
                   child: Stack(
                     children: <Widget>[
                       _buildTop(context),
-                      _buildFunc(),
+                      _buildFunc(context),
                       _buildImageRecommend(context),
-                      _buildMoreFunc(),
+                      _buildMoreFunc(context),
                     ],
                   ),
                 ),
@@ -78,7 +82,7 @@ class ManageContainer extends StatelessWidget {
   /// 上方
   Widget _buildTop(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 20),
+      padding: EdgeInsets.only(left: 20, top: MediaQuery.of(context).padding.top),
       height: 140,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
@@ -158,10 +162,10 @@ class ManageContainer extends StatelessWidget {
   }
 
   /// 我的功能
-  Widget _buildFunc() {
+  Widget _buildFunc(BuildContext context) {
     return Container(
       height: 130,
-      margin: EdgeInsets.only(top: 90, left: 10, right: 10),
+      margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 82, left: 10, right: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
@@ -195,7 +199,7 @@ class ManageContainer extends StatelessWidget {
     return Container(
       height: 80,
       width: MediaQuery.of(context).size.width - 20,
-      margin: EdgeInsets.only(top: 230, left: 10, right: 10),
+      margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 230, left: 10, right: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
@@ -211,11 +215,11 @@ class ManageContainer extends StatelessWidget {
   }
 
   /// 更多工具
-  Widget _buildMoreFunc() {
+  Widget _buildMoreFunc(BuildContext context) {
     Color iconColor = Color(0xFF505257);
     return Container(
       height: 250,
-      margin: EdgeInsets.only(top: 320, left: 10, right: 10),
+      margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 330, left: 10, right: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
