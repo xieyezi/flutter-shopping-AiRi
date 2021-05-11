@@ -2,7 +2,7 @@
 
 Language: 中文简体 | [English](README-EN.md)
 
-下载apk请点击[这里](https://github.com/xieyezi/flutter-shopping-AiRi/blob/master/apk/app-release.apk?raw=trueg)
+下载apk请点击[这里](https://github.com/xieyezi/flutter-shopping-AiRi/blob/master/apk/airi.apk?raw=trueg)
 
 ### 更新
 - 添加apk文件
