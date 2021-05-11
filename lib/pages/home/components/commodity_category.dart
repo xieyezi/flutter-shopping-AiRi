@@ -21,8 +21,7 @@ class CommodityCateGory extends StatelessWidget {
         GestureDetector(
           onTap: i == cateGoryList.length
               ? () => {mainProvder.setTabBarSelectedIndex = 1}
-              : () => MyNavigator.push(SearchPage(
-                  title: cateGoryList[i].name, keyword: cateGoryList[i].name)),
+              : () => MyNavigator.push(SearchPage(title: cateGoryList[i].name, keyword: cateGoryList[i].name)),
           child: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,14 +59,11 @@ class CommodityCateGory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _screenWidth = MediaQuery.of(context).size.width;
-    final _containerHeight = _screenWidth <= 414 ? 228.0 : 108.0;
-    final _crossAxisCount = _screenWidth <= 414 ? 4 : 8;
-    final _childAspectRatio = (_screenWidth - 60) / _crossAxisCount / 128;
     return Container(
-      height: _containerHeight,
+      height: 350,
       width: _screenWidth - 30,
       padding: EdgeInsets.all(15),
-      margin: EdgeInsets.only(top: 15, right: 15, bottom: 7.5, left: 15),
+      margin: EdgeInsets.only(top: 10, right: 15, bottom: 10, left: 15),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(5),
@@ -75,10 +71,10 @@ class CommodityCateGory extends StatelessWidget {
       child: GridView.count(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        mainAxisSpacing: 15.0,
-        crossAxisSpacing: 25.0,
-        crossAxisCount: _crossAxisCount,
-        childAspectRatio: _childAspectRatio,
+        mainAxisSpacing: 0.0,
+        crossAxisSpacing: 5.0,
+        crossAxisCount: 3,
+        childAspectRatio: 1,
         children: _buildGridItem(context),
       ),
     );
