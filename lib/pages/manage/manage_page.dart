@@ -20,26 +20,6 @@ class ManagePage extends StatelessWidget {
         body: ManageContainer(),
         backgroundColor: AppColors.supplierColor1,
       ),
-      // child: BaseScaffold(
-      //   appBar: MyAppBar(
-      //     brightness: Brightness.dark,
-      //     leadingType: AppBarBackType.None,
-      //     backgroundColor: AppColors.supplierColor1,
-      //     actions: <Widget>[
-      //       Container(
-      //         padding: EdgeInsets.only(right: 15),
-      //         child: Row(
-      //           children: <Widget>[
-      //             Icon(Iconfont.settings),
-      //             SizedBox(width: 15),
-      //             Icon(Iconfont.notice),
-      //           ],
-      //         ),
-      //       )
-      //     ],
-      //   ),
-      //   body: ManageContainer(),
-      // ),
     );
   }
 }
