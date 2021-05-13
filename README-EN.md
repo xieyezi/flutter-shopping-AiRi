@@ -2,10 +2,6 @@
 
 Language: English | [中文简体](https://github.com/xieyezi/flutter-shopping-ArRi)
 
-## The UI of this project is copyrighted and commercial use is prohibited! ! (Only for learning and communication), if it is used for commercial purposes, the consequences will be at your own risk! ! !
-
-This project is a personal practice project for learning Flutter.And this is a shopping APP, covering the common functions of the shopping APP.
-
 Supported features：
 
 - [x]  Complete e-commerce shopping process
