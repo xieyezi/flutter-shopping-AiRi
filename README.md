@@ -26,8 +26,8 @@ Language: 中文简体 | [English](README-EN.md)
 ## 项目运行环境
 
 ```
-1. Flutter version 1.17.0
-2. Dart version 2.8.1
+1. Flutter version 1.22.4 stable
+2. Dart version 2.10.4
 ```
 
 ## 后续计划
