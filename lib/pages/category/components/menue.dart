@@ -8,16 +8,15 @@ class CategoryMenue extends StatefulWidget {
   final double itemWidth;
   final ValueChanged<int> menueTaped;
   CategoryMenue(
-      {Key key, this.items, this.itemHeight, this.itemWidth, this.menueTaped})
+      {Key? key, required this.items, required this.itemHeight, required this.itemWidth, required this.menueTaped})
       : super(key: key);
   @override
   State<StatefulWidget> createState() => CategoryMenueState();
 }
 
-class CategoryMenueState extends State<CategoryMenue>
-    with SingleTickerProviderStateMixin {
-  Animation<double> animation;
-  AnimationController controller;
+class CategoryMenueState extends State<CategoryMenue> with SingleTickerProviderStateMixin {
+  late Animation<double> animation;
+  late AnimationController controller;
   int currentItemIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -30,8 +29,7 @@ class CategoryMenueState extends State<CategoryMenue>
           alignment: Alignment.center,
           child: currentItemIndex == i
               ? Container(
-                  padding:
-                      EdgeInsets.only(top: 5, bottom: 5, left: 12, right: 12),
+                  padding: EdgeInsets.only(top: 5, bottom: 5, left: 12, right: 12),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       //背景径向渐变
@@ -72,8 +70,7 @@ class CategoryMenueState extends State<CategoryMenue>
     double begin = currentItemIndex * widget.itemHeight;
     double end = i * widget.itemHeight;
     // print('begin' + begin.toString() + "-----" + end.toString());
-    animation = Tween(begin: begin, end: end)
-        .animate(new CurvedAnimation(parent: controller, curve: Curves.linear));
+    animation = Tween(begin: begin, end: end).animate(new CurvedAnimation(parent: controller, curve: Curves.linear));
     controller.addStatusListener((status) {
       if (AnimationStatus.completed == status) {
         //  print(currentItemIndex);
@@ -85,8 +82,7 @@ class CategoryMenueState extends State<CategoryMenue>
   }
 
   initState() {
-    controller =
-        AnimationController(duration: Duration(milliseconds: 150), vsync: this);
+    controller = AnimationController(duration: Duration(milliseconds: 150), vsync: this);
     animation = Tween(begin: 0.0, end: 0.0).animate(controller);
     controller.addListener(() {
       if (mounted) {

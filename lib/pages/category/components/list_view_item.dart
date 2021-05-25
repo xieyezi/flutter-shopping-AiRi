@@ -6,10 +6,9 @@ import 'package:AiRi/utils/my_navigator.dart';
 
 class SubCategoryList extends StatefulWidget {
   final double height;
-  final CategoryDatum data;
+  final CategoryDatum? data;
   final void Function(String) goPage;
-  SubCategoryList({Key key, this.height, this.goPage, this.data})
-      : super(key: key);
+  SubCategoryList({Key? key, required this.height, required this.goPage, this.data}) : super(key: key);
   @override
   State<StatefulWidget> createState() => SubCategoryListState();
 }
@@ -30,9 +29,7 @@ class SubCategoryListState extends State<SubCategoryList> {
             //  physics: NeverScrollableScrollPhysics(),
             child: Container(
               child: widget.data != null
-                  ? SecondryCategory(
-                      data: widget.data,
-                    )
+                  ? SecondryCategory(data: widget.data ?? CategoryDatum(name: '', banner: '', list: []))
                   : Center(
                       child: CircularProgressIndicator(),
                     ),
@@ -62,7 +59,7 @@ class SubCategoryListState extends State<SubCategoryList> {
 
 class SecondryCategory extends StatelessWidget {
   final CategoryDatum data;
-  SecondryCategory({Key key, this.data}) : super(key: key);
+  SecondryCategory({Key? key, required this.data}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     List<ListElement> items = data.list;
@@ -87,8 +84,7 @@ class SecondryCategory extends StatelessWidget {
           physics: NeverScrollableScrollPhysics(),
           children: items.map((i) {
             return GestureDetector(
-              onTap: () =>
-                  MyNavigator.push(SearchPage(title: i.name, keyword: i.name)),
+              onTap: () => MyNavigator.push(SearchPage(title: i.name, keyword: i.name)),
               child: Container(
                   margin: EdgeInsets.only(top: 10),
                   child: Column(

@@ -39,7 +39,7 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   final isLogin;
-  const MyApp({Key key, this.isLogin}) : super(key: key);
+  const MyApp({Key? key, this.isLogin}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
             const Locale('en'),
             const Locale('zh'),
           ],
-          localeResolutionCallback:
+         localeResolutionCallback:
               (Locale locale, Iterable<Locale> supportedLocales) {
             return locale;
           },

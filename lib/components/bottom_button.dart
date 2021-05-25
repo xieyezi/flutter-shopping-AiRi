@@ -2,14 +2,14 @@ import 'package:AiRi/styles/styles.dart';
 import 'package:flutter/material.dart';
 
 class BottomButton extends StatelessWidget {
-  final String text;
-  final Function handleOk;
-  const BottomButton({Key key, this.handleOk, this.text}) : super(key: key);
+  final String? text;
+  final Function? handleOk;
+  const BottomButton({Key ?key, this.handleOk, this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => handleOk(),
+      onTap: () => handleOk!(),
       child: Container(
         margin: EdgeInsets.only(
           bottom: MediaQuery.of(context).padding.bottom,
@@ -26,7 +26,7 @@ class BottomButton extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            text,
+            text!,
             style: TextStyle(
               color: Colors.white,
               fontSize: 16,

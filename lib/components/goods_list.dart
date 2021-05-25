@@ -6,7 +6,7 @@ import 'my_divider.dart';
 
 class GoodList extends StatelessWidget {
   final List<GoodsList> goodsList;
-  const GoodList({Key key, this.goodsList}) : super(key: key);
+  const GoodList({Key? key, required this.goodsList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

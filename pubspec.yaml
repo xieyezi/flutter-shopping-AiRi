@@ -28,6 +28,7 @@ dependencies:
   shared_preferences: ^2.0.5
   url_launcher: ^6.0.4
   sqflite: ^2.0.0+3
+  convert: ^3.0.0
 
 dev_dependencies:
   flutter_test:

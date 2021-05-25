@@ -7,7 +7,7 @@ import 'package:AiRi/utils/my_navigator.dart';
 
 class CommdityItemHome extends StatelessWidget {
   final GoodsList goodData;
-  const CommdityItemHome({Key key, this.goodData}) : super(key: key);
+  const CommdityItemHome({Key? key, required this.goodData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

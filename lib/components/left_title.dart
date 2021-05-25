@@ -4,7 +4,7 @@ import 'package:AiRi/styles/colors.dart';
 class LeftTitle extends StatelessWidget {
   final Color tipColor;
   final String title;
-  const LeftTitle({Key key, this.tipColor, this.title}) : super(key: key);
+  const LeftTitle({Key? key, required this.tipColor, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

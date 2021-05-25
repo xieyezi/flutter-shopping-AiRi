@@ -7,7 +7,7 @@ import 'package:AiRi/utils/my_navigator.dart';
 
 class AppBarShopCartIconButton extends StatelessWidget {
   const AppBarShopCartIconButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

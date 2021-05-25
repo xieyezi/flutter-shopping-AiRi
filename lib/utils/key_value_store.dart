@@ -1,6 +1,5 @@
 // Get a location using getDatabasesPath
 import 'dart:convert';
-
 import 'package:convert/convert.dart';
 import 'package:crypto/crypto.dart' as crypto;
 import 'package:path/path.dart';
@@ -64,7 +63,7 @@ class KeyValueStoreItem {
   }
 
   KeyValueStoreItem(
-      {this.name, this.createTime, this.content, this.contentHash});
+      {required this.name, required this.createTime, this.content, required this.contentHash});
 
   factory KeyValueStoreItem.fromJson(Map<String, dynamic> json) {
     return KeyValueStoreItem(

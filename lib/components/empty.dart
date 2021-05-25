@@ -13,9 +13,13 @@ class Empty extends StatelessWidget {
 
   /// 按钮事件
   final Function buttonTap;
-  const Empty(
-      {Key key, this.img, this.tipText, this.buttonText, this.buttonTap})
-      : super(key: key);
+  const Empty({
+    Key? key,
+    required this.img,
+    required this.tipText,
+    required this.buttonText,
+    required this.buttonTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

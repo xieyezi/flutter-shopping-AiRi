@@ -5,7 +5,7 @@ import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 
 class Top extends StatelessWidget {
-  const Top({Key key}) : super(key: key);
+  const Top({Key? key}) : super(key: key);
 
   /// 收货人
   Widget _buildContact(BuildContext context) {

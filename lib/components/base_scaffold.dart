@@ -4,27 +4,27 @@ import 'package:AiRi/components/my_app_bar.dart';
 
 class BaseScaffold extends Scaffold {
   BaseScaffold(
-      {String title,
-      PreferredSizeWidget appBar,
-      Widget body,
-      List<Widget> actions,
+      {String? title,
+      PreferredSizeWidget? appBar,
+      Widget? body,
+      List<Widget>? actions,
       AppBarBackType leadType = AppBarBackType.Back,
-      WillPopCallback onWillPop,
+      WillPopCallback? onWillPop,
       Brightness brightness = Brightness.light,
-      Widget floatingActionButton,
+      Widget? floatingActionButton,
       Color appBarBackgroundColor = Colors.white,
-      Color titleColor,
+      Color? titleColor,
       bool centerTitle = true,
-      FloatingActionButtonLocation floatingActionButtonLocation})
+      FloatingActionButtonLocation? floatingActionButtonLocation})
       : super(
           appBar: appBar ??
               MyAppBar(
                 brightness: Brightness.light,
                 leadingType: leadType,
                 onWillPop: onWillPop,
-                actions: actions,
+                actions: actions ?? [],
                 centerTitle: centerTitle,
-                title: MyTitle(title ?? '', color: titleColor),
+                title: MyTitle(title ?? '', color: titleColor ?? Colors.red),
                 backgroundColor: appBarBackgroundColor,
               ),
           backgroundColor: Colors.white,

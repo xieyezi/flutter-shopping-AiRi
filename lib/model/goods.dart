@@ -6,10 +6,10 @@ class GoodsList {
   String goodsPicUrl;
 
   GoodsList({
-    this.goodsId,
-    this.goodsMiniPrice,
-    this.goodsName,
-    this.goodsPicUrl,
+    required this.goodsId,
+    required this.goodsMiniPrice,
+    required this.goodsName,
+    required this.goodsPicUrl,
   });
 
   factory GoodsList.fromJson(Map<String, dynamic> json) => GoodsList(
