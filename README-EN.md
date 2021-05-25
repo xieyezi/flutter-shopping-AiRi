@@ -2,6 +2,9 @@
 
 Language: English | [中文简体](https://github.com/xieyezi/flutter-shopping-ArRi)
 
+
+### have been migrate to null-safety version
+
 Supported features：
 
 - [x]  Complete e-commerce shopping process
@@ -20,8 +23,10 @@ This project is still in continuous iteration, just give 🌟🌟 if you like it
 ## Operating environment
 
 ```
-1. Flutter version 1.17.0
-2. Dart version 2.8.1
+Flutter 2.2.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision b22742018b (10 days ago) • 2021-05-14 19:12:57 -0700
+Engine • revision a9d88a4d18
+Tools • Dart 2.13.0
 ```
 
 
