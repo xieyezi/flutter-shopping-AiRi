@@ -24,7 +24,7 @@ class BaseScaffold extends Scaffold {
                 onWillPop: onWillPop,
                 actions: actions ?? [],
                 centerTitle: centerTitle,
-                title: MyTitle(title ?? '', color: titleColor ?? Colors.red),
+                title: MyTitle(title ?? '', color: titleColor ?? Colors.grey[800]),
                 backgroundColor: appBarBackgroundColor,
               ),
           backgroundColor: Colors.white,

@@ -154,7 +154,6 @@ class ManageContainer extends StatelessWidget {
             padding: EdgeInsets.only(top: 10, bottom: 10),
             child: LeftTitle(
               title: '我的功能',
-              tipColor: Colors.red,
             ),
           ),
           MyDivider(),
@@ -211,7 +210,6 @@ class ManageContainer extends StatelessWidget {
             padding: EdgeInsets.only(top: 10),
             child: LeftTitle(
               title: '更多工具',
-              tipColor: Colors.red,
             ),
           ),
           Container(
