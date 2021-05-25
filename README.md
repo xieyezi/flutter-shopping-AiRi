@@ -4,6 +4,9 @@ Language: 中文简体 | [English](README-EN.md)
 
 下载apk请点击[这里](https://github.com/xieyezi/flutter-shopping-AiRi/blob/master/apk/airi.apk?raw=trueg)
 
+
+#### 空安全正在迁移中...
+
 ### 更新
 - 添加apk文件
 -  ~~项目采用了mock 接口，目前mock接口已挂，正在修复中...~~(已修复)
