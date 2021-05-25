@@ -9,7 +9,7 @@ import 'package:AiRi/utils/my_navigator.dart';
 
 class OrderItem extends StatelessWidget {
   final orderItemData;
-  const OrderItem({Key key, this.orderItemData}) : super(key: key);
+  const OrderItem({Key? key, this.orderItemData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class OrderItem extends StatelessWidget {
 ///顶部供应商
 class Head extends StatelessWidget {
   const Head({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -84,7 +84,7 @@ class Head extends StatelessWidget {
 
 /// 订单内容
 class Content extends StatelessWidget {
-  const Content({Key key}) : super(key: key);
+  const Content({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -208,7 +208,7 @@ class Content extends StatelessWidget {
 
 /// 底部
 class Bottom extends StatelessWidget {
-  const Bottom({Key key}) : super(key: key);
+  const Bottom({Key? key}) : super(key: key);
   // 弹出对话框
   void _showCancelDialog(BuildContext context) {
     showDialog(

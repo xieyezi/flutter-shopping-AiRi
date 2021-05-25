@@ -9,8 +9,8 @@ import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class ManagePage extends StatelessWidget {
-  final String supplierId;
-  const ManagePage({Key key, this.supplierId}) : super(key: key);
+  final String? supplierId;
+  const ManagePage({Key? key, this.supplierId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ManagePage extends StatelessWidget {
 }
 
 class ManageContainer extends StatelessWidget {
-  const ManageContainer({Key key}) : super(key: key);
+  const ManageContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +60,8 @@ class ManageContainer extends StatelessWidget {
   /// 上方
   Widget _buildTop(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 20, top: MediaQuery.of(context).padding.top),
-      height: 140,
+      padding: EdgeInsets.only(left: 20, top: MediaQuery.of(context).padding.top + 20),
+      height: 240,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -70,7 +70,7 @@ class ManageContainer extends StatelessWidget {
           end: Alignment.bottomCenter,
           colors: [AppColors.supplierColor1, AppColors.supplierColor2],
         ),
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
+        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(100), bottomRight: Radius.circular(100)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,7 +103,7 @@ class ManageContainer extends StatelessWidget {
                         style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
                       ),
                       Divider(height: 5),
-                      Text('填写兴趣更懂你哦～', style: TextStyle(color: Colors.white, fontSize: 14)),
+                      Text('填写兴趣更懂你哦～', style: TextStyle(color: Colors.white, fontSize: 12)),
                     ],
                   ),
                 )
@@ -143,7 +143,7 @@ class ManageContainer extends StatelessWidget {
   Widget _buildFunc(BuildContext context) {
     return Container(
       height: 130,
-      margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 82, left: 10, right: 10),
+      margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 100, left: 10, right: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
@@ -152,7 +152,9 @@ class ManageContainer extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: LeftTitle(title: '我的功能'),
+            child: LeftTitle(
+              title: '我的功能',
+            ),
           ),
           MyDivider(),
           Container(
@@ -206,7 +208,9 @@ class ManageContainer extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(top: 10),
-            child: LeftTitle(title: '更多工具'),
+            child: LeftTitle(
+              title: '更多工具',
+            ),
           ),
           Container(
             padding: EdgeInsets.only(left: 15, right: 15, top: 15),

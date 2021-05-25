@@ -28,16 +28,12 @@ class _CartPageState extends State<CartPage> {
               return IconButton(
                 icon: Text(
                   tuple.item2 ? '完成' : '编辑',
-                  style: TextStyle(
-                      color: AppColors.primaryGreyText,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400),
+                  style: TextStyle(color: AppColors.primaryGreyText, fontSize: 14, fontWeight: FontWeight.w400),
                 ),
                 onPressed: () => tuple.item1(),
               );
             },
-            selector: (_, provider) =>
-                Tuple2(provider.changeEditMode, provider.isEditMode),
+            selector: (_, provider) => Tuple2(provider.changeEditMode, provider.isEditMode),
           ),
         ],
         body: CartContainer(),
@@ -47,7 +43,7 @@ class _CartPageState extends State<CartPage> {
 }
 
 class CartContainer extends StatelessWidget {
-  const CartContainer({Key key}) : super(key: key);
+  const CartContainer({Key? key}) : super(key: key);
   Widget _listItemBuilder(BuildContext context, int index) {
     // 取出数据
     final brandList = Provider.of<ShopingCartProvider>(context).getBrandList;

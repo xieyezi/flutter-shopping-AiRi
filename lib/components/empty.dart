@@ -13,9 +13,13 @@ class Empty extends StatelessWidget {
 
   /// 按钮事件
   final Function buttonTap;
-  const Empty(
-      {Key key, this.img, this.tipText, this.buttonText, this.buttonTap})
-      : super(key: key);
+  const Empty({
+    Key? key,
+    required this.img,
+    required this.tipText,
+    required this.buttonText,
+    required this.buttonTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +51,7 @@ class Empty extends StatelessWidget {
               width: 120,
               height: 40.5,
               child: OutlineButton(
-                onPressed: buttonTap,
+                onPressed: () => buttonTap,
                 borderSide: BorderSide(color: AppColors.primaryColor),
                 splashColor: AppColors.primaryColor,
                 child: Center(

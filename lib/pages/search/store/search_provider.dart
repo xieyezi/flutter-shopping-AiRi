@@ -5,17 +5,16 @@ import 'package:AiRi/model/search.dart';
 import 'package:AiRi/services/search.dart';
 
 class SearchPageProvider with ChangeNotifier {
-  RefreshController refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController refreshController = RefreshController(initialRefresh: false);
   List<GoodsList> result = [];
   bool loading = true;
 
   SearchPageProvider() {
     /// 数据加载
-    searchData();
+    searchData(keyword: '');
     notifyListeners();
   }
-  Future searchData({bool refresh = false, String keyword}) async {
+  Future searchData({bool refresh = false, required String keyword}) async {
     // print(keyword);
     loading = true;
 
@@ -34,7 +33,7 @@ class SearchPageProvider with ChangeNotifier {
   }
 
   /// 上拉加载
-  Future loadData({bool refresh = false, String keyword}) async {
+  Future loadData({bool refresh = false, required String keyword}) async {
     SearchModel res = await SearchAPI.searchData(keyword: keyword);
     result += res.result;
     if (result.length < 20) {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class MyCachedNetworkImage extends StatelessWidget {
   final String imageurl;
-  const MyCachedNetworkImage({Key key, this.imageurl}) : super(key: key);
+  const MyCachedNetworkImage({Key? key, required this.imageurl}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

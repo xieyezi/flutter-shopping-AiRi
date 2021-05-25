@@ -10,7 +10,7 @@ import 'package:AiRi/utils/my_navigator.dart';
 
 class DetailBottom extends StatelessWidget {
   final String contact;
-  const DetailBottom({Key key, this.contact}) : super(key: key);
+  const DetailBottom({Key? key, required this.contact}) : super(key: key);
 
   /// 左边的每个item
   Widget _buildleftItem(String imgUrl, String title) {

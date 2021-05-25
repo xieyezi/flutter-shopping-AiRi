@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 
 class ChooseAddress extends StatelessWidget {
-  const ChooseAddress({Key key}) : super(key: key);
+  const ChooseAddress({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class ChooseAddress extends StatelessWidget {
 }
 
 class ChooseAddressContainer extends StatelessWidget {
-  const ChooseAddressContainer({Key key}) : super(key: key);
+  const ChooseAddressContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import 'components/order_item.dart';
 import 'components/top.dart';
 
 class ConfirmOrderPage extends StatelessWidget {
-  const ConfirmOrderPage({Key key}) : super(key: key);
+  const ConfirmOrderPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class ConfirmOrderPage extends StatelessWidget {
 }
 
 class ConfirmOrderPageContainer extends StatelessWidget {
-  const ConfirmOrderPageContainer({Key key}) : super(key: key);
+  const ConfirmOrderPageContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class ConfirmOrderPageContainer extends StatelessWidget {
   }
 
   /// 订单列表
-  Widget _buildOrderList(BuildContext context, {List orderList}) {
+  Widget _buildOrderList(BuildContext context, {required List orderList}) {
     // final brandList = Provider.of<ShopingCartProvider>(context).getBrandList;
     // print(brandList);
     return Container(

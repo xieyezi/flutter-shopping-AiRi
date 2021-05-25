@@ -9,7 +9,7 @@ class CateGoryModel {
   List<CategoryDatum> categoryData;
 
   CateGoryModel({
-    this.categoryData,
+    required this.categoryData,
   });
 
   factory CateGoryModel.fromJson(Map<String, dynamic> json) => CateGoryModel(
@@ -28,9 +28,9 @@ class CategoryDatum {
   List<ListElement> list;
 
   CategoryDatum({
-    this.name,
-    this.banner,
-    this.list,
+    required this.name,
+    required this.banner,
+    required this.list,
   });
 
   factory CategoryDatum.fromJson(Map<String, dynamic> json) => CategoryDatum(
@@ -52,8 +52,8 @@ class ListElement {
   String icon;
 
   ListElement({
-    this.name,
-    this.icon,
+    required this.name,
+    required this.icon,
   });
 
   factory ListElement.fromJson(Map<String, dynamic> json) => ListElement(

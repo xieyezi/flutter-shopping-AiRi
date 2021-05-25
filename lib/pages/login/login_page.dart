@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   _LoginFormState createState() => _LoginFormState();
@@ -70,33 +70,31 @@ class _LoginFormState extends State<LoginPage> {
           height: MediaQuery.of(context).size.height,
           padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
           child: Form(
-            key: _formKey, //设置globalKey，用于后面获取FormState
-            autovalidate: false,
+            autovalidateMode: AutovalidateMode.disabled,
+            key: _formKey,
             child: Column(
               children: <Widget>[
                 Container(
                   height: MediaQuery.of(context).size.height * 0.25,
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image(
-                          image: AssetImage("assets/images/logo.png"),
-                          width: 72,
-                          height: 72,
-                          fit: BoxFit.fill,
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          'AiRi',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.normal,
-                            color: AppColors.primaryColor,
-                          ),
-                        ),
-                      ]),
+                  child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Image(
+                      image: AssetImage("assets/images/logo.png"),
+                      width: 72,
+                      height: 72,
+                      fit: BoxFit.fill,
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      'AiRi',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                  ]),
                 ),
                 _buildPhoneInput(),
                 SizedBox(
@@ -132,8 +130,7 @@ class _LoginFormState extends State<LoginPage> {
                       width: 1,
                       height: 16,
                       child: const DecoratedBox(
-                        decoration: const BoxDecoration(
-                            color: Color.fromRGBO(217, 217, 217, 1)),
+                        decoration: const BoxDecoration(color: Color.fromRGBO(217, 217, 217, 1)),
                       ),
                     ),
                     SizedBox(width: 14),
@@ -168,14 +165,10 @@ class _LoginFormState extends State<LoginPage> {
         decoration: InputDecoration(
           suffixIcon: GestureDetector(
             onTap: () => _removePhone(),
-            child: _unameController.text != ''
-                ? Icon(Icons.cancel, size: 18)
-                : SizedBox(),
+            child: _unameController.text != '' ? Icon(Icons.cancel, size: 18) : SizedBox(),
           ),
           contentPadding: EdgeInsets.symmetric(vertical: 18),
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide.none),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(5), borderSide: BorderSide.none),
           filled: true,
           fillColor: Color.fromRGBO(245, 247, 247, 1),
           hintText: "请输入手机号码",
@@ -186,7 +179,8 @@ class _LoginFormState extends State<LoginPage> {
         cursorColor: AppColors.primaryColor,
         // 校验用户名
         validator: (v) {
-          return v.trim().length > 0 ? null : "用户名不能为空";
+          String t = v ?? '';
+          return t.trim().length > 0 ? null : "用户名不能为空";
         });
   }
 
@@ -201,9 +195,7 @@ class _LoginFormState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               _pwdController.text != ''
-                  ? GestureDetector(
-                      onTap: () => _removePassword(),
-                      child: Icon(Icons.cancel, size: 18))
+                  ? GestureDetector(onTap: () => _removePassword(), child: Icon(Icons.cancel, size: 18))
                   : SizedBox(),
               SizedBox(width: 10),
               GestureDetector(
@@ -218,9 +210,7 @@ class _LoginFormState extends State<LoginPage> {
             ],
           ),
           contentPadding: EdgeInsets.symmetric(vertical: 18),
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide.none),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(5), borderSide: BorderSide.none),
           filled: true,
           fillColor: Color.fromRGBO(245, 247, 247, 1),
           hintText: "请输入密码",
@@ -232,7 +222,8 @@ class _LoginFormState extends State<LoginPage> {
         cursorColor: AppColors.primaryColor,
         //校验密码
         validator: (v) {
-          return v.trim().length > 5 ? null : "密码不能少于6位";
+          String t = v ?? '';
+          return t.trim().length > 5 ? null : "密码不能少于6位";
         });
   }
 }

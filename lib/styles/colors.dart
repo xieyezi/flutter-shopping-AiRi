@@ -21,7 +21,7 @@ class AppColors {
   static const Color tabBarActive = Color(0xFF8B63E6);
 
   /// 分类tab渐变色
-  static Color buttonLine1 = Colors.purple[300];
+  static Color buttonLine1 = Color(0xFFBA68C8);
 
   /// 分类tab渐变色
   static const Color buttonLine2 = Color(0xFF7265E3);

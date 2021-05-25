@@ -13,20 +13,17 @@ class HomeModel {
   List<GoodsList> hotList;
 
   HomeModel({
-    this.banerList,
-    this.cateGoryList,
-    this.brandList,
-    this.hotList,
+    required this.banerList,
+    required this.cateGoryList,
+    required this.brandList,
+    required this.hotList,
   });
 
   factory HomeModel.fromJson(Map<String, dynamic> json) => HomeModel(
         banerList: List<String>.from(json["banerList"].map((x) => x)),
-        cateGoryList: List<BrandListElement>.from(
-            json["cateGoryList"].map((x) => BrandListElement.fromJson(x))),
-        brandList: List<BrandListElement>.from(
-            json["brandList"].map((x) => BrandListElement.fromJson(x))),
-        hotList: List<GoodsList>.from(
-            json["hotList"].map((x) => GoodsList.fromJson(x))),
+        cateGoryList: List<BrandListElement>.from(json["cateGoryList"].map((x) => BrandListElement.fromJson(x))),
+        brandList: List<BrandListElement>.from(json["brandList"].map((x) => BrandListElement.fromJson(x))),
+        hotList: List<GoodsList>.from(json["hotList"].map((x) => GoodsList.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -42,12 +39,11 @@ class BrandListElement {
   String icon;
 
   BrandListElement({
-    this.name,
-    this.icon,
+    required this.name,
+    required this.icon,
   });
 
-  factory BrandListElement.fromJson(Map<String, dynamic> json) =>
-      BrandListElement(
+  factory BrandListElement.fromJson(Map<String, dynamic> json) => BrandListElement(
         name: json["name"],
         icon: json["icon"],
       );

@@ -14,7 +14,7 @@ import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();

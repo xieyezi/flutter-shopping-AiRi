@@ -9,11 +9,10 @@ import 'package:AiRi/pages/search/store/search_provider.dart';
 import 'package:AiRi/pages/shopping_cart/cart_page.dart';
 import 'package:AiRi/styles/colors.dart';
 
-
 class SearchPage extends StatelessWidget {
   final String title;
   final String keyword;
-  const SearchPage({Key key, this.title, this.keyword}) : super(key: key);
+  const SearchPage({Key? key, required this.title, required this.keyword}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +39,7 @@ class SearchPage extends StatelessWidget {
 
 class SerachContainer extends StatefulWidget {
   final String keyword;
-  const SerachContainer({Key key, this.keyword}) : super(key: key);
+  const SerachContainer({Key? key, required this.keyword}) : super(key: key);
 
   @override
   _SerachContainerState createState() => _SerachContainerState();
@@ -88,8 +87,8 @@ class _SerachContainerState extends State<SerachContainer> {
                     child: SmartRefresher(
                       enablePullUp: true,
                       controller: state.refreshController,
-                      onRefresh: () => state.searchData(refresh: true),
-                      onLoading: state.loadData,
+                      onRefresh: () => state.searchData(refresh: true, keyword: ''),
+                      onLoading: () => state.loadData,
                       header: WaterDropHeader(),
                       footer: MyCustomFooter(),
                       child: _buildresultList(state.result),

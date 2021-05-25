@@ -13,12 +13,12 @@ class Specifications extends StatelessWidget {
   final List<SpecificationList> specificationList;
 
   const Specifications(
-      {Key key,
-      this.guidePrice,
-      this.miniBuyNum,
-      this.specificationList,
-      this.goodsImgUrl,
-      this.price})
+      {Key? key,
+      required this.guidePrice,
+      required this.miniBuyNum,
+      required this.specificationList,
+      required this.goodsImgUrl,
+      required this.price})
       : super(key: key);
 
   /////////////// 对话框UI

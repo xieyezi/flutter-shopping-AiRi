@@ -1,6 +1,5 @@
 import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:AiRi/pages/category/store/category_page_provider.dart';
 import 'package:AiRi/pages/search/search_page.dart';
@@ -9,7 +8,7 @@ import 'components/menue.dart';
 import 'components/right_list_view.dart';
 
 class CategoryPage extends StatelessWidget {
-  const CategoryPage({Key key}) : super(key: key);
+  const CategoryPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,28 +25,26 @@ class CategoryPage extends StatelessWidget {
 }
 
 class Category extends StatefulWidget {
-  Category({Key key}) : super(key: key);
+  Category({Key? key}) : super(key: key);
   @override
   State<StatefulWidget> createState() => CategoryState();
 }
 
 class CategoryState extends State<Category> with AutomaticKeepAliveClientMixin {
   int currentPage = 0;
-  GlobalKey<RightListViewState> rightListviewKey =
-      new GlobalKey<RightListViewState>();
-  GlobalKey<CategoryMenueState> categoryMenueKey =
-      new GlobalKey<CategoryMenueState>();
+  GlobalKey<RightListViewState> rightListviewKey = new GlobalKey<RightListViewState>();
+  GlobalKey<CategoryMenueState> categoryMenueKey = new GlobalKey<CategoryMenueState>();
 
   bool isAnimating = false;
   int itemCount = 0;
-  double menueWidth;
-  double itemHeight;
-  double height;
+  late double menueWidth;
+  late double itemHeight;
+  late double height;
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final double statusBarHeight = ScreenUtil.statusBarHeight; // 顶部状态栏高度
-    final double bottomBarHeight = ScreenUtil.bottomBarHeight; // 底部状态栏高度
+    final double statusBarHeight = MediaQuery.of(context).padding.top; // 顶部状态栏高度
+    final double bottomBarHeight = MediaQuery.of(context).padding.bottom; // 底部状态栏高度
     final double scafoldHeight = 44; // Scafold高度
     final double searchBarHeight = 49; // 搜索框的高度
     final double bottomTabbarHeight = 49; // 底部tabBar的高度
@@ -67,8 +64,7 @@ class CategoryState extends State<Category> with AutomaticKeepAliveClientMixin {
             child: Column(
               children: <Widget>[
                 SearchBar(
-                  myOntap: (value) =>
-                      MyNavigator.push(SearchPage(title: '搜索', keyword: value)),
+                  myOntap: (value) => MyNavigator.push(SearchPage(title: '搜索', keyword: value)),
                 ),
                 Expanded(
                   child: Row(
@@ -100,11 +96,11 @@ class CategoryState extends State<Category> with AutomaticKeepAliveClientMixin {
   }
 
   menueItemTap(int i) {
-    rightListviewKey.currentState.jumpTopage(i);
+    rightListviewKey.currentState!.jumpTopage(i);
   }
 
   listViewChanged(i) {
-    this.categoryMenueKey.currentState.moveToTap(i);
+    this.categoryMenueKey.currentState!.moveToTap(i);
   }
 
   @override

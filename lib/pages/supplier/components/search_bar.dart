@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SearchBar extends StatefulWidget {
   final String keyword;
   final Function myOntap;
-  const SearchBar({Key key, this.myOntap, this.keyword = ''}) : super(key: key);
+  const SearchBar({Key? key, required this.myOntap, this.keyword = ''}) : super(key: key);
 
   @override
   _SearchBarState createState() => _SearchBarState();

@@ -8,7 +8,7 @@ class Info extends StatelessWidget {
   final String goodsSeries;
   final String price;
   const Info(
-      {Key key, this.goodsName, this.brandName, this.goodsSeries, this.price})
+      {Key? key, required this.goodsName, required this.brandName, required this.goodsSeries, required this.price})
       : super(key: key);
 
   @override

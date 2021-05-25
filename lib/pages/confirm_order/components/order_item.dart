@@ -8,7 +8,7 @@ import 'package:AiRi/pages/shopping_cart/components/cart_item.dart';
 import 'package:AiRi/pages/shopping_cart/store/shopping_cart_provider.dart';
 
 class OrderItem extends StatelessWidget {
-  const OrderItem({Key key}) : super(key: key);
+  const OrderItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

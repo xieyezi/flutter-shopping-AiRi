@@ -18,7 +18,7 @@ import 'package:AiRi/utils/my_navigator.dart';
 
 class SupplierPage extends StatelessWidget {
   final String supplierId;
-  const SupplierPage({Key key, this.supplierId}) : super(key: key);
+  const SupplierPage({Key? key, required this.supplierId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,17 +40,17 @@ class SupplierPage extends StatelessWidget {
 }
 
 class SupplierContainer extends StatelessWidget {
-  const SupplierContainer({Key key}) : super(key: key);
+  const SupplierContainer({Key? key}) : super(key: key);
 
   /// 上方
   Widget _buildTop(
     BuildContext context,
     TextStyle infoTextStyle, {
-    String supplierName,
-    String contact,
-    String phoneNum,
-    String workTime,
-    String address,
+    required String supplierName,
+    required String contact,
+    required String phoneNum,
+    required String workTime,
+    required String address,
   }) {
     return SliverToBoxAdapter(
       child: Stack(
@@ -71,8 +71,11 @@ class SupplierContainer extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   SearchBar(
-                      myOntap: (value) => MyNavigator.push(
-                          SearchPage(title: '搜索', key: value))),
+                      myOntap: (value) => MyNavigator.push(SearchPage(
+                            title: '搜索',
+                            key: value,
+                            keyword: '',
+                          ))),
                   Container(
                     padding: EdgeInsets.only(top: 30),
                     child: Column(
@@ -167,8 +170,7 @@ class SupplierContainer extends StatelessWidget {
   }
 
   /// 下方商家简介
-  Widget _buildBottomInfo(BuildContext context,
-      {String supplierImgUrl, String introDuceText}) {
+  Widget _buildBottomInfo(BuildContext context, {required String supplierImgUrl, required String introDuceText}) {
     return SliverToBoxAdapter(
       child: Container(
         margin: EdgeInsets.all(15),
@@ -210,7 +212,7 @@ class SupplierContainer extends StatelessWidget {
   }
 
   /// 下方商品列表
-  List<Widget> _bottomList({List<GoodsList> supplierList}) {
+  List<Widget> _bottomList({required List<GoodsList> supplierList}) {
     return [
       SliverToBoxAdapter(
         child: Container(
@@ -250,7 +252,7 @@ class SupplierContainer extends StatelessWidget {
   }
 
   /// 商品列表
-  Widget _buildBottomList({List<GoodsList> supplierList}) {
+  Widget _buildBottomList({required List<GoodsList> supplierList}) {
     return SliverPadding(
       padding: EdgeInsets.only(left: 15, right: 15),
       sliver: SliverFixedExtentList(
@@ -293,15 +295,12 @@ class SupplierContainer extends StatelessWidget {
               child: CustomScrollView(
                 slivers: <Widget>[
                       /// 上方
-                      _buildTop(
-                        context,
-                        infoTextStyle,
-                        supplierName: state.supplierName,
-                        contact: state.contact,
-                        phoneNum: state.phoneNum,
-                        workTime: state.workTime,
-                        address: '重庆市巴南区花溪街道'
-                      ),
+                      _buildTop(context, infoTextStyle,
+                          supplierName: state.supplierName,
+                          contact: state.contact,
+                          phoneNum: state.phoneNum,
+                          workTime: state.workTime,
+                          address: '重庆市巴南区花溪街道'),
 
                       /// 商家简介
                       _buildBottomInfo(

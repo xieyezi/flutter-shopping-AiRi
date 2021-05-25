@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:AiRi/styles/styles.dart';
 
 class Remark extends StatefulWidget {
-  const Remark({Key key}) : super(key: key);
+  const Remark({Key? key}) : super(key: key);
 
   @override
   _RemarkState createState() => _RemarkState();

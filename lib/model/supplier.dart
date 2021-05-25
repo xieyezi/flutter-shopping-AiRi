@@ -2,8 +2,7 @@ import 'dart:convert';
 
 import 'package:AiRi/model/goods.dart';
 
-SupplierModel supplierModelFromJson(String str) =>
-    SupplierModel.fromJson(json.decode(str));
+SupplierModel supplierModelFromJson(String str) => SupplierModel.fromJson(json.decode(str));
 
 String supplierModelToJson(SupplierModel data) => json.encode(data.toJson());
 
@@ -17,13 +16,13 @@ class SupplierModel {
   List<GoodsList> supplierList;
 
   SupplierModel({
-    this.supplierName,
-    this.contact,
-    this.phoneNum,
-    this.workTime,
-    this.supplierImgUrl,
-    this.introDuceText,
-    this.supplierList,
+    required this.supplierName,
+    required this.contact,
+    required this.phoneNum,
+    required this.workTime,
+    required this.supplierImgUrl,
+    required this.introDuceText,
+    required this.supplierList,
   });
 
   factory SupplierModel.fromJson(Map<String, dynamic> json) => SupplierModel(
@@ -33,8 +32,7 @@ class SupplierModel {
         workTime: json["workTime"],
         supplierImgUrl: json["supplierImgUrl"],
         introDuceText: json["introDuceText"],
-        supplierList: List<GoodsList>.from(
-            json["supplierList"].map((x) => GoodsList.fromJson(x))),
+        supplierList: List<GoodsList>.from(json["supplierList"].map((x) => GoodsList.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {

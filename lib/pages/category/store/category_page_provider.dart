@@ -4,7 +4,7 @@ import 'package:AiRi/services/services.dart';
 
 class CateGoryPageProvider with ChangeNotifier {
   bool loading = true;
-  List<CategoryDatum> categoryData;
+  late List<CategoryDatum> categoryData;
 
   CateGoryPageProvider() {
     /// 数据加载

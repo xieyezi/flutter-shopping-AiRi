@@ -5,7 +5,7 @@ import 'package:AiRi/pages/order_detail/order_detail_page.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 
 class Bottom extends StatelessWidget {
-  const Bottom({Key key}) : super(key: key);
+  const Bottom({Key? key}) : super(key: key);
 
   // 弹出对话框
   void _showCancelDialog(BuildContext context) async {

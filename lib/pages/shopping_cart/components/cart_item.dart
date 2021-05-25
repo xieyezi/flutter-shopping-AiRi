@@ -12,18 +12,16 @@ class CartItem extends StatelessWidget {
   final bool isShowCheckButton; // 是否显示选择按钮
 
   const CartItem({
-    Key key,
-    this.brandData,
-    this.brandIndex,
+    Key? key,
+    required this.brandData,
+    required this.brandIndex,
     this.isShowCheckButton = true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // 取出方法
-    final selectBrandAllGood =
-        Provider.of<ShopingCartProvider>(context, listen: false)
-            .selectBrandAllGood;
+    final selectBrandAllGood = Provider.of<ShopingCartProvider>(context, listen: false).selectBrandAllGood;
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -54,9 +52,9 @@ class Head extends StatelessWidget {
   final Function selectedAllGood;
   final bool isShowCheckButton; // 是否显示选择按钮
   const Head({
-    Key key,
-    this.brandData,
-    this.selectedAllGood,
+    Key? key,
+    required this.brandData,
+    required this.selectedAllGood,
     this.isShowCheckButton = true,
   }) : super(key: key);
 
@@ -77,7 +75,7 @@ class Head extends StatelessWidget {
                   Visibility(
                     visible: isShowCheckButton,
                     child: GestureDetector(
-                      onTap: selectedAllGood,
+                      onTap: () => selectedAllGood,
                       child: brandData.isBrandChecked
                           ? Image.asset(
                               'assets/images/shopping_cart/check.png',
@@ -161,8 +159,7 @@ class Head extends StatelessWidget {
                               borderRadius: BorderRadius.circular(3.0),
                             ),
                             margin: EdgeInsets.only(right: 5.0),
-                            padding: EdgeInsets.only(
-                                top: 2.0, right: 5.0, bottom: 2.0, left: 5.0),
+                            padding: EdgeInsets.only(top: 2.0, right: 5.0, bottom: 2.0, left: 5.0),
                             child: Text(
                               '自提',
                               style: TextStyle(
@@ -180,8 +177,7 @@ class Head extends StatelessWidget {
                               borderRadius: BorderRadius.circular(3.0),
                             ),
                             margin: EdgeInsets.only(right: 5.0),
-                            padding: EdgeInsets.only(
-                                top: 2.0, right: 5.0, bottom: 2.0, left: 5.0),
+                            padding: EdgeInsets.only(top: 2.0, right: 5.0, bottom: 2.0, left: 5.0),
                             child: Text(
                               '物流',
                               style: TextStyle(
@@ -208,19 +204,16 @@ class Content extends StatelessWidget {
   final GoodItem goodData;
   final bool isShowCheckButton; // 是否显示选择按钮
   const Content({
-    Key key,
-    this.goodData,
+    Key? key,
+    required this.goodData,
     this.isShowCheckButton = true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // 取出方法
-    final selectSingleGood =
-        Provider.of<ShopingCartProvider>(context, listen: false)
-            .selectSingleGood;
-    final addOneGoodItem =
-        Provider.of<ShopingCartProvider>(context, listen: false).addOneGoodItem;
+    final selectSingleGood = Provider.of<ShopingCartProvider>(context, listen: false).selectSingleGood;
+    final addOneGoodItem = Provider.of<ShopingCartProvider>(context, listen: false).addOneGoodItem;
     return Container(
       height: 142.0,
       child: Stack(
@@ -265,10 +258,7 @@ class Content extends StatelessWidget {
               goodData.good.goodsName,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFF17191A)),
+              style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400, color: Color(0xFF17191A)),
             ),
           ),
           Positioned(
@@ -279,10 +269,7 @@ class Content extends StatelessWidget {
               goodData.good.goodsDescription,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                  fontSize: 11.0,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFFAAB0B3)),
+              style: TextStyle(fontSize: 11.0, fontWeight: FontWeight.w400, color: Color(0xFFAAB0B3)),
             ),
           ),
           goodData.isBiggerQuantity

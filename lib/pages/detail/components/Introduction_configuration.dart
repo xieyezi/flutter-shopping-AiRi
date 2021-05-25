@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:AiRi/styles/colors.dart';
 
 class IntroductionAndConfiguration extends StatefulWidget {
-  const IntroductionAndConfiguration({Key key}) : super(key: key);
+  const IntroductionAndConfiguration({Key? key}) : super(key: key);
 
   @override
   _IntroductionAndConfigurationState createState() =>
