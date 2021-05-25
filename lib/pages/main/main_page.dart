@@ -2,7 +2,6 @@ import 'package:AiRi/pages/main/components/my_bottom_navigation_bar.dart';
 import 'package:AiRi/pages/manage/manage_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_splash_screen/flutter_splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:AiRi/pages/category/category_page.dart';
 import 'package:AiRi/pages/order/order_page.dart';
@@ -15,8 +14,7 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
-class _MainPageState extends State<MainPage>
-    with AutomaticKeepAliveClientMixin {
+class _MainPageState extends State<MainPage> with AutomaticKeepAliveClientMixin {
   @override
   void initState() {
     super.initState();
@@ -25,9 +23,7 @@ class _MainPageState extends State<MainPage>
 
   ///hide your splash screen
   Future<void> hideScreen() async {
-    Future.delayed(Duration(milliseconds: 750), () {
-      FlutterSplashScreen.hide();
-    });
+    Future.delayed(Duration(milliseconds: 750), () {});
   }
 
   @override
@@ -38,8 +34,7 @@ class _MainPageState extends State<MainPage>
     MyNavigator.ctx = context;
 
     /// 根据iphone X 高度适配,高度去掉 顶部、底部
-    ScreenUtil.init(context,
-        width: 375, height: 812 - 44 - 34, allowFontScaling: true);
+    ScreenUtil.init(context, width: 375, height: 812 - 44 - 34, allowFontScaling: true);
     return Scaffold(
       backgroundColor: Color(0xfffefefe),
       bottomNavigationBar: MyBottomNavigationBar(onTap: (index) {
@@ -50,12 +45,7 @@ class _MainPageState extends State<MainPage>
       }),
       body: PageView(
         controller: mainState.tabBarPageController,
-        children: <Widget>[
-          HomePage(),
-          CategoryPage(),
-          OrderPage(),
-          ManagePage()
-        ],
+        children: <Widget>[HomePage(), CategoryPage(), OrderPage(), ManagePage()],
         physics: NeverScrollableScrollPhysics(),
       ),
     );
