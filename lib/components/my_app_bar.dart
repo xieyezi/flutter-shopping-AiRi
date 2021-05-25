@@ -51,7 +51,7 @@ class AppBarBack extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        final willBack = onWillPop == null ? true : await onWillPop();
+        final willBack = onWillPop == null ? true : await onWillPop!();
         if (!willBack) return;
         Navigator.pop(context);
       },

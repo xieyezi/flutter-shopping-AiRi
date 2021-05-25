@@ -41,7 +41,8 @@ class ConfirmOrderPageContainer extends StatelessWidget {
           Container(
             width: double.infinity,
             height: double.infinity,
-            margin: EdgeInsets.only(bottom: 70 + MediaQuery.of(context).padding.bottom),
+            margin: EdgeInsets.only(
+                bottom: 70 + MediaQuery.of(context).padding.bottom),
             child: SingleChildScrollView(
               physics: AlwaysScrollableScrollPhysics(),
               child: Column(

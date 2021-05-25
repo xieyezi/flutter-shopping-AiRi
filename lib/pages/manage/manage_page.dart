@@ -9,8 +9,8 @@ import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class ManagePage extends StatelessWidget {
-  final String supplierId;
-  const ManagePage({Key? key, required this.supplierId}) : super(key: key);
+  final String? supplierId;
+  const ManagePage({Key? key, this.supplierId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

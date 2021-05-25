@@ -51,7 +51,7 @@ class Empty extends StatelessWidget {
               width: 120,
               height: 40.5,
               child: OutlineButton(
-                onPressed: buttonTap,
+                onPressed: () => buttonTap,
                 borderSide: BorderSide(color: AppColors.primaryColor),
                 splashColor: AppColors.primaryColor,
                 child: Center(

@@ -11,8 +11,7 @@ class MyNavigator {
   static Future<T>? push<T extends Object>(Widget page, {BuildContext? context}) {
     final _ctx = context ?? ctx;
     FocusScope.of(_ctx).requestFocus(FocusNode());
-    return Navigator.push(
-      _ctx,
+    Navigator.of(_ctx).push(
       MaterialPageRoute(builder: (_ctx) => page),
     );
   }

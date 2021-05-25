@@ -75,7 +75,7 @@ class Head extends StatelessWidget {
                   Visibility(
                     visible: isShowCheckButton,
                     child: GestureDetector(
-                      onTap: selectedAllGood,
+                      onTap: () => selectedAllGood,
                       child: brandData.isBrandChecked
                           ? Image.asset(
                               'assets/images/shopping_cart/check.png',

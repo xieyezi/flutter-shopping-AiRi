@@ -31,8 +31,7 @@ Future<void> main() async {
   );
   // 透明状态栏
   if (Platform.isAndroid) {
-    SystemUiOverlayStyle systemUiOverlayStyle =
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   }
 }
@@ -58,8 +57,7 @@ class MyApp extends StatelessWidget {
             const Locale('en'),
             const Locale('zh'),
           ],
-         localeResolutionCallback:
-              (Locale locale, Iterable<Locale> supportedLocales) {
+          localeResolutionCallback: (Locale? locale, Iterable<Locale> supportedLocales) {
             return locale;
           },
           theme: ThemeData(

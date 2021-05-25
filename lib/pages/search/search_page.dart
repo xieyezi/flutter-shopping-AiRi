@@ -9,7 +9,6 @@ import 'package:AiRi/pages/search/store/search_provider.dart';
 import 'package:AiRi/pages/shopping_cart/cart_page.dart';
 import 'package:AiRi/styles/colors.dart';
 
-
 class SearchPage extends StatelessWidget {
   final String title;
   final String keyword;
@@ -89,7 +88,7 @@ class _SerachContainerState extends State<SerachContainer> {
                       enablePullUp: true,
                       controller: state.refreshController,
                       onRefresh: () => state.searchData(refresh: true, keyword: ''),
-                      onLoading: state.loadData,
+                      onLoading: () => state.loadData,
                       header: WaterDropHeader(),
                       footer: MyCustomFooter(),
                       child: _buildresultList(state.result),

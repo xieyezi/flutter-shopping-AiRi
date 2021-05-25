@@ -179,7 +179,8 @@ class _LoginFormState extends State<LoginPage> {
         cursorColor: AppColors.primaryColor,
         // 校验用户名
         validator: (v) {
-          return v.trim().length > 0 ? null : "用户名不能为空";
+          String t = v ?? '';
+          return t.trim().length > 0 ? null : "用户名不能为空";
         });
   }
 
@@ -221,7 +222,8 @@ class _LoginFormState extends State<LoginPage> {
         cursorColor: AppColors.primaryColor,
         //校验密码
         validator: (v) {
-          return v.trim().length > 5 ? null : "密码不能少于6位";
+          String t = v ?? '';
+          return t.trim().length > 5 ? null : "密码不能少于6位";
         });
   }
 }
