@@ -30,8 +30,10 @@ Language: 中文简体 | [English](README-EN.md)
 ## 项目运行环境
 
 ```
-1. Flutter version 1.22.4 stable
-2. Dart version 2.10.4
+Flutter 2.2.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision b22742018b (10 days ago) • 2021-05-14 19:12:57 -0700
+Engine • revision a9d88a4d18
+Tools • Dart 2.13.0
 ```
 
 ## 后续计划
