@@ -34,19 +34,21 @@ class _MainPageState extends State<MainPage> with AutomaticKeepAliveClientMixin 
     MyNavigator.ctx = context;
 
     /// 根据iphone X 高度适配,高度去掉 顶部、底部
-    ScreenUtil.init(context, width: 375, height: 812 - 44 - 34, allowFontScaling: true);
-    return Scaffold(
-      backgroundColor: Color(0xfffefefe),
-      bottomNavigationBar: MyBottomNavigationBar(onTap: (index) {
-        mainState.tabBarPageController.jumpToPage(index);
-        setState(() {
-          mainState.setTabBarSelectedIndex = index;
-        });
-      }),
-      body: PageView(
-        controller: mainState.tabBarPageController,
-        children: <Widget>[HomePage(), CategoryPage(), OrderPage(), ManagePage()],
-        physics: NeverScrollableScrollPhysics(),
+    return ScreenUtilInit(
+      designSize: Size(375, 812 - 44 - 34),
+      builder: () => Scaffold(
+        backgroundColor: Color(0xfffefefe),
+        bottomNavigationBar: MyBottomNavigationBar(onTap: (index) {
+          mainState.tabBarPageController.jumpToPage(index);
+          setState(() {
+            mainState.setTabBarSelectedIndex = index;
+          });
+        }),
+        body: PageView(
+          controller: mainState.tabBarPageController,
+          children: <Widget>[HomePage(), CategoryPage(), OrderPage(), ManagePage()],
+          physics: NeverScrollableScrollPhysics(),
+        ),
       ),
     );
   }

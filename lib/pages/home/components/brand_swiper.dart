@@ -9,7 +9,7 @@ import 'package:AiRi/utils/my_navigator.dart';
 
 class BrandSwiper extends StatelessWidget {
   final List<BrandListElement> brandList;
-  const BrandSwiper({Key key, this.brandList}) : super(key: key);
+  const BrandSwiper({Key? key, required this.brandList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

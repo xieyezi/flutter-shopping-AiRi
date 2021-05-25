@@ -6,15 +6,14 @@ import 'package:AiRi/pages/main/store/main_provider.dart';
 import 'package:AiRi/pages/order/components/order_item.dart';
 
 class OrderPage extends StatefulWidget {
-  OrderPage({Key key}) : super(key: key);
+  OrderPage({Key? key}) : super(key: key);
 
   @override
   _OrderPageState createState() => _OrderPageState();
 }
 
-class _OrderPageState extends State<OrderPage>
-    with SingleTickerProviderStateMixin {
-  TabController _tabController;
+class _OrderPageState extends State<OrderPage> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
   List tabs = ["全部", "待支付", "待接单", "待发货", "待收货", "已完成"];
 
   @override
@@ -43,9 +42,9 @@ class _OrderPageState extends State<OrderPage>
 
 class OrderPageContainer extends StatelessWidget {
   const OrderPageContainer({
-    Key key,
-    @required TabController tabController,
-    @required this.tabs,
+    Key? key,
+    required TabController tabController,
+    required this.tabs,
   })  : _tabController = tabController,
         super(key: key);
 
@@ -71,8 +70,7 @@ class OrderPageContainer extends StatelessWidget {
                         img: 'assets/images/order/empty.png',
                         tipText: '没有相关订单哦~',
                         buttonText: '去采购',
-                        buttonTap: () =>
-                            {mainProvder.setTabBarSelectedIndex = 0},
+                        buttonTap: () => {mainProvder.setTabBarSelectedIndex = 0},
                       )
                     : ListView.builder(
                         itemCount: orderList.length,

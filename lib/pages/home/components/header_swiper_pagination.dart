@@ -14,7 +14,7 @@ class MyHomeBannerPagination extends StatelessWidget {
   // final double value;
   final int itemCount;
   final MyPaginationController controller;
-  const MyHomeBannerPagination({Key key, this.itemCount, this.controller})
+  const MyHomeBannerPagination({Key? key, required this.itemCount, required this.controller})
       : super(key: key);
 
   @override
@@ -26,7 +26,7 @@ class MyHomeBannerPagination extends StatelessWidget {
         // 当前索引
         final currentIndex = value.floor();
         // 下一个滚动缩影
-        final nextIndex = value.ceil() >= itemCount ? 0 : value.ceil();
+        final nextIndex = value!.ceil() >= itemCount ? 0 : value.ceil();
 
         /// 1. 宽度处理
         // 默认宽度

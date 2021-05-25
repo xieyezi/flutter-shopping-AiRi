@@ -12,7 +12,7 @@ import 'components/item.dart';
 class OrderDetailPage extends StatelessWidget {
   final String orderId;
 
-  const OrderDetailPage({Key key, this.orderId}) : super(key: key);
+  const OrderDetailPage({Key? key, required this.orderId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +79,7 @@ class OrderDetailPage extends StatelessWidget {
 }
 
 class OrderDetailContainer extends StatelessWidget {
-  const OrderDetailContainer({Key key}) : super(key: key);
+  const OrderDetailContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

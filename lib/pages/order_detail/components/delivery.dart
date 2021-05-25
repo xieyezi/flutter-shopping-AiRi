@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Delivery extends StatelessWidget {
-  const Delivery({Key key}) : super(key: key);
+  const Delivery({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class Delivery extends StatelessWidget {
 
   /// 每一项
   Widget _buildItem(
-      {String tip, String content, TextStyle infoTextTip, TextStyle infoText}) {
+      {required String tip, required String content, required TextStyle infoTextTip, required TextStyle infoText}) {
     return Container(
       height: 40,
       child: Align(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Middle extends StatelessWidget {
-  const Middle({Key key}) : super(key: key);
+  const Middle({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +55,9 @@ class Middle extends StatelessWidget {
 
   /// 每一项
   Widget _buildItem({
-    String title,
-    String tip,
-    String img,
+    required String title,
+    required String tip,
+    required String img,
   }) {
     TextStyle greyText = TextStyle(
       color: Color(0xFFBEBEBE),

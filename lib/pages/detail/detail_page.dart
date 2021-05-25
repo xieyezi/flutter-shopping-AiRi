@@ -12,7 +12,7 @@ import 'components/specifications.dart';
 
 class DetailPage extends StatelessWidget {
   final String goodsId;
-  const DetailPage({Key key, this.goodsId}) : super(key: key);
+  const DetailPage({Key? key, required this.goodsId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class DetailPage extends StatelessWidget {
 }
 
 class DetailContainer extends StatelessWidget {
-  const DetailContainer({Key key}) : super(key: key);
+  const DetailContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

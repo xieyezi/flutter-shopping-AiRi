@@ -2,7 +2,7 @@ import 'package:AiRi/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 class OrderDetailInfo extends StatelessWidget {
-  const OrderDetailInfo({Key key}) : super(key: key);
+  const OrderDetailInfo({Key? key}) : super(key: key);
 
   void _catBankInfo(BuildContext context) {
     /// 构建每一项
@@ -224,7 +224,7 @@ class OrderDetailInfo extends StatelessWidget {
 
   /// 每一项
   Widget _buildItem(
-      {String tip, String content, TextStyle infoTextTip, TextStyle infoText}) {
+      {required String tip, required String content, required TextStyle infoTextTip, required TextStyle infoText}) {
     return Container(
       height: 40,
       child: Align(

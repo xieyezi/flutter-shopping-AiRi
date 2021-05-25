@@ -9,7 +9,7 @@ import '../../../styles/colors.dart';
 
 class CommodityCateGory extends StatelessWidget {
   final List<BrandListElement> cateGoryList;
-  const CommodityCateGory({Key key, this.cateGoryList}) : super(key: key);
+  const CommodityCateGory({Key? key, required this.cateGoryList}) : super(key: key);
 
   ///////////////////////////////
   List<Widget> _buildGridItem(BuildContext context) {

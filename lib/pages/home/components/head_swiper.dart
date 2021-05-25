@@ -5,7 +5,7 @@ import 'header_swiper_pagination.dart';
 
 class HeadSwiper extends StatefulWidget {
   final List<String> bannerList;
-  const HeadSwiper({Key key, this.bannerList}) : super(key: key);
+  const HeadSwiper({Key? key, required this.bannerList}) : super(key: key);
 
   @override
   _HeadSwiperState createState() => _HeadSwiperState();

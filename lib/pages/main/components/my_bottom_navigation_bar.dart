@@ -30,14 +30,12 @@ const List<Map<String, String>> _tabBarData = [
 class MyBottomNavigationBar extends StatelessWidget {
   final ValueChanged<int> onTap;
 
-  MyBottomNavigationBar({this.onTap});
+  MyBottomNavigationBar({required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     /// 底部tabar 统一设置为 49 + 全面屏底部安全距离
-    final bottomBarHeight = 49 +
-        MediaQuery.of(context).padding.bottom +
-        (Platform.isAndroid ? 2 : 0);
+    final bottomBarHeight = 49 + MediaQuery.of(context).padding.bottom + (Platform.isAndroid ? 2 : 0);
     return SizedBox(
       height: bottomBarHeight,
       child: _getBottomNavigationBar(context),
@@ -76,14 +74,13 @@ class MyBottomNavigationBar extends StatelessWidget {
   List<BottomNavigationBarItem> _getTabBar(BuildContext context) {
     var index = 0;
     return _tabBarData.map((item) {
-      return _getBottomBarItem(item["title"], item["image"],
-          item["selectedImage"], context, index++ == 3 ? _getBadge() : null);
+      return _getBottomBarItem(
+          item["title"], item["image"], item["selectedImage"], context, index++ == 3 ? _getBadge() : null);
     }).toList();
   }
 
-  BottomNavigationBarItem _getBottomBarItem(
-      String title, String image, String selectedImage, BuildContext context,
-      [Widget badge]) {
+  BottomNavigationBarItem _getBottomBarItem(String? title, String? image, String? selectedImage, BuildContext context,
+      [Widget? badge]) {
     final _screenWidth = MediaQuery.of(context).size.width;
     final _tabBarIconWidth = _screenWidth / _tabBarData.length;
     const _tabBarIconHeight = 22.0;
@@ -98,7 +95,7 @@ class MyBottomNavigationBar extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Image.asset(
-                image,
+                image!,
                 width: _tabBarIconWidth,
                 height: _tabBarIconHeight,
               ),
@@ -109,18 +106,14 @@ class MyBottomNavigationBar extends StatelessWidget {
         activeIcon: Stack(
           children: <Widget>[
             Image.asset(
-              selectedImage,
+              selectedImage!,
               width: _tabBarIconWidth,
               height: _tabBarIconHeight,
             ),
             _badge
           ],
         ),
-        title: Container(
-          height: 16,
-          alignment: Alignment.bottomCenter,
-          child: Text(title),
-        ));
+        label: title);
   }
 
   _getBadge() {

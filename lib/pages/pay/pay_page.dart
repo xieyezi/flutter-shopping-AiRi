@@ -10,7 +10,7 @@ import 'components/top.dart';
 class PayPage extends StatelessWidget {
   final String orderId;
 
-  const PayPage({Key key, this.orderId}) : super(key: key);
+  const PayPage({Key? key, required this.orderId}) : super(key: key);
 
   /// 取消订单对话框
   Future<bool> _showCancelDialog(BuildContext context) async {
@@ -59,7 +59,7 @@ class PayPage extends StatelessWidget {
 }
 
 class PayPageContainer extends StatelessWidget {
-  const PayPageContainer({Key key}) : super(key: key);
+  const PayPageContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

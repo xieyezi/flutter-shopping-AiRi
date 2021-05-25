@@ -4,7 +4,7 @@ import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 
 class DetailHeadSwiper extends StatelessWidget {
   final List<String> bannerList;
-  const DetailHeadSwiper({Key key, this.bannerList}) : super(key: key);
+  const DetailHeadSwiper({Key? key, required this.bannerList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -10,7 +10,7 @@ const double kNavigationBarHeight = 44.0;
 class MyAppBar extends AppBar implements PreferredSizeWidget {
   MyAppBar(
       {Key? key,
-      required Widget title,
+      Widget? title,
       AppBarBackType? leadingType,
       WillPopCallback? onWillPop,
       Widget? leading,

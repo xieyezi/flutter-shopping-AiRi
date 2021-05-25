@@ -10,7 +10,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class ManagePage extends StatelessWidget {
   final String supplierId;
-  const ManagePage({Key key, this.supplierId}) : super(key: key);
+  const ManagePage({Key? key, required this.supplierId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ManagePage extends StatelessWidget {
 }
 
 class ManageContainer extends StatelessWidget {
-  const ManageContainer({Key key}) : super(key: key);
+  const ManageContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -152,7 +152,10 @@ class ManageContainer extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: LeftTitle(title: '我的功能'),
+            child: LeftTitle(
+              title: '我的功能',
+              tipColor: Colors.red,
+            ),
           ),
           MyDivider(),
           Container(
@@ -206,7 +209,10 @@ class ManageContainer extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(top: 10),
-            child: LeftTitle(title: '更多工具'),
+            child: LeftTitle(
+              title: '更多工具',
+              tipColor: Colors.red,
+            ),
           ),
           Container(
             padding: EdgeInsets.only(left: 15, right: 15, top: 15),
