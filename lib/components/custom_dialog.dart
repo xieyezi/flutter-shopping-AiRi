@@ -127,7 +127,7 @@ class _CustomDialogState extends State<CustomDialog> {
                     height: 55,
                     decoration: BoxDecoration(
                       color: widget.confirmColor == null ? Color(0xFFFFFFFF) : widget.confirmColor,
-                      borderRadius: widget.isCancel ?? true ?? false
+                      borderRadius: widget.isCancel ?? true
                           ? BorderRadius.only(bottomRight: Radius.circular(16.0))
                           : BorderRadius.only(bottomLeft: Radius.circular(16.0), bottomRight: Radius.circular(16.0)),
                     ),
