@@ -1,11 +1,13 @@
 # AiRi
 
+<strong> 已迁移至空安全版本 </strong>
+
 Language: 中文简体 | [English](README-EN.md)
 
 下载apk请点击[这里](https://github.com/xieyezi/flutter-shopping-AiRi/blob/master/apk/airi.apk?raw=trueg)
 
 
-<strong> 已迁移至空安全版本 </strong>
+
 
 ### 更新记录
 -  ~~增加安卓APP图标~~
