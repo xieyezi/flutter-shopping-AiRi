@@ -20,6 +20,7 @@ class SupplierController extends GetxController {
 
   @override
   void onInit() {
+    print(Get.arguments); //FIXME: supplierId
     initData();
     super.onInit();
   }

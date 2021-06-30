@@ -65,7 +65,8 @@ class _HomePageContainerState extends State<HomePageContainer> {
                         /// 搜索框
                         SliverToBoxAdapter(
                           child:
-                              SearchBar(myOntap: (value) => MyNavigator.push(SearchPage(title: '搜索', keyword: value))),
+                              //FIXME: title: '搜索', keyword: value
+                              SearchBar(myOntap: (value) => MyNavigator.push(SearchPage())),
                         ),
 
                         /// 顶部轮播图

@@ -11,9 +11,7 @@ import 'components/item.dart';
 import 'order_detail_controller.dart';
 
 class OrderDetailPage extends GetView<OrderDetailController> {
-  final String orderId;
-
-  const OrderDetailPage({Key? key, required this.orderId}) : super(key: key);
+  const OrderDetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,8 +55,7 @@ class OrderDetailPage extends GetView<OrderDetailController> {
                     padding: EdgeInsets.only(bottom: 0.0, top: 20),
                     child: Text(
                       '取消订单',
-                      style:
-                          TextStyle(color: Color(0xFF4A4A4A), fontSize: 14.0),
+                      style: TextStyle(color: Color(0xFF4A4A4A), fontSize: 14.0),
                     ),
                   ),
                 ],
@@ -91,8 +88,7 @@ class OrderDetailContainer extends StatelessWidget {
           Container(
             width: double.infinity,
             height: double.infinity,
-            margin: EdgeInsets.only(
-                bottom: 60 + MediaQuery.of(context).padding.bottom),
+            margin: EdgeInsets.only(bottom: 60 + MediaQuery.of(context).padding.bottom),
             child: SingleChildScrollView(
               physics: AlwaysScrollableScrollPhysics(),
               child: Column(
@@ -111,7 +107,8 @@ class OrderDetailContainer extends StatelessWidget {
             bottom: 0,
             child: BottomButton(
               text: '去支付',
-              handleOk: () => MyNavigator.push(PayPage(orderId: "id")),
+              //FIXME: orderId: "id"
+              handleOk: () => MyNavigator.push(PayPage()),
             ),
           ),
         ],

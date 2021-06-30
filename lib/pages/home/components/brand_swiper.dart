@@ -6,7 +6,6 @@ import 'package:AiRi/components/left_title.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import '../home_model.dart';
 
-
 class BrandSwiper extends StatelessWidget {
   final List<BrandListElement> brandList;
   const BrandSwiper({Key? key, required this.brandList}) : super(key: key);
@@ -48,7 +47,8 @@ class BrandSwiper extends StatelessWidget {
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: () =>
-          MyNavigator.push(SupplierPage(supplierId: brandList[index].name)),
+          //FIXME: supplierId: brandList[index].name
+          MyNavigator.push(SupplierPage()),
       child: Container(
         padding: EdgeInsets.only(right: 25),
         child: Column(

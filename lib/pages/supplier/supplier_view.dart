@@ -17,8 +17,7 @@ import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 
 class SupplierPage extends GetView<SupplierController> {
-  final String supplierId;
-  const SupplierPage({Key? key, required this.supplierId}) : super(key: key);
+  const SupplierPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,12 +66,7 @@ class SupplierContainer extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 children: <Widget>[
-                  SearchBar(
-                      myOntap: (value) => MyNavigator.push(SearchPage(
-                            title: '搜索',
-                            key: value,
-                            keyword: '',
-                          ))),
+                  SearchBar(myOntap: (value) => MyNavigator.push(SearchPage())),
                   Container(
                     padding: EdgeInsets.only(top: 30),
                     child: Column(
@@ -273,7 +267,7 @@ class SupplierContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final SupplierController state = Get.find();
+    final SupplierController state = Get.find();
     TextStyle infoTextStyle = TextStyle(
       color: Colors.white,
       fontSize: 12,

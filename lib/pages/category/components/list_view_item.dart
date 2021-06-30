@@ -84,7 +84,8 @@ class SecondryCategory extends StatelessWidget {
           physics: NeverScrollableScrollPhysics(),
           children: items.map((i) {
             return GestureDetector(
-              onTap: () => MyNavigator.push(SearchPage(title: i.name, keyword: i.name)),
+              //FIXME:title: i.name, keyword: i.name
+              onTap: () => MyNavigator.push(SearchPage()),
               child: Container(
                   margin: EdgeInsets.only(top: 10),
                   child: Column(

@@ -12,8 +12,7 @@ import 'package:AiRi/pages/detail/components/Introduction_configuration.dart';
 
 
 class DetailPage extends GetView<DetailContainer> {
-  final String goodsId;
-  const DetailPage({Key? key, required this.goodsId}) : super(key: key);
+  const DetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

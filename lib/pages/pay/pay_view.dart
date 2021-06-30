@@ -4,15 +4,12 @@ import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 import 'components/middle.dart';
 import 'components/top.dart';
 import 'pay_controller.dart';
 
 class PayPage extends GetView<PayController> {
-  final String orderId;
-
-  const PayPage({Key? key, required this.orderId}) : super(key: key);
+  const PayPage({Key? key}) : super(key: key);
 
   /// 取消订单对话框
   Future<bool> _showCancelDialog(BuildContext context) async {

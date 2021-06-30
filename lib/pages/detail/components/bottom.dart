@@ -125,15 +125,13 @@ class DetailBottom extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: 10.0),
                     child: Text(
                       '联系电话：$contact',
-                      style:
-                          TextStyle(color: Color(0xFF666666), fontSize: 14.0),
+                      style: TextStyle(color: Color(0xFF666666), fontSize: 14.0),
                     ),
                   ),
                   Container(
                     child: Text(
                       '客服工作时间：工作日 9：30~17：30',
-                      style:
-                          TextStyle(color: Color(0xFF666666), fontSize: 14.0),
+                      style: TextStyle(color: Color(0xFF666666), fontSize: 14.0),
                     ),
                   ),
                 ],
@@ -156,8 +154,7 @@ class DetailBottom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 60 + MediaQuery.of(context).padding.bottom,
-      padding: EdgeInsets.only(
-          bottom: MediaQuery.of(context).padding.bottom, top: 10),
+      padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom, top: 10),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -178,23 +175,21 @@ class DetailBottom extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 GestureDetector(
-                    onTap: () => _showDialog(context),
-                    child:
-                        _buildleftItem('assets/images/home/lianxi.png', '客服')),
+                    onTap: () => _showDialog(context), child: _buildleftItem('assets/images/home/lianxi.png', '客服')),
                 SizedBox(
                   width: 30,
                 ),
                 GestureDetector(
                     onTap: () =>
-                        MyNavigator.push(SupplierPage(supplierId: 'id')),
+                        //FIXME:supplierId: 'id'
+                        MyNavigator.push(SupplierPage()),
                     child: _buildleftItem('assets/images/home/shop.png', '店铺')),
                 SizedBox(
                   width: 30,
                 ),
                 GestureDetector(
                     onTap: () => MyNavigator.push(CartPage()),
-                    child: _buildleftItem(
-                        'assets/images/home/gouwuche.png', '购物车')),
+                    child: _buildleftItem('assets/images/home/gouwuche.png', '购物车')),
               ],
             ),
           ),

@@ -60,7 +60,8 @@ class CategoryState extends State<Category> with AutomaticKeepAliveClientMixin {
             child: Column(
               children: <Widget>[
                 SearchBar(
-                  myOntap: (value) => MyNavigator.push(SearchPage(title: '搜索', keyword: value)),
+                  //FIXME:title: '搜索', keyword: value
+                  myOntap: (value) => MyNavigator.push(SearchPage()),
                 ),
                 Expanded(
                   child: Row(

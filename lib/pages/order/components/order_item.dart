@@ -42,7 +42,8 @@ class Head extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
-      onTap: () => MyNavigator.push(SupplierPage(supplierId: "supplierId")),
+      //FIXME: supplierId: "supplierId"
+      onTap: () => MyNavigator.push(SupplierPage()),
       child: Container(
         padding: EdgeInsets.all(15.0),
         child: Row(
@@ -89,7 +90,8 @@ class Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => MyNavigator.push(OrderDetailPage(orderId: "id")),
+      //FIXME: orderId
+      onTap: () => MyNavigator.push(OrderDetailPage()),
       child: Container(
         height: 120.0,
         margin: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 0),
@@ -105,10 +107,8 @@ class Content extends StatelessWidget {
               child: Container(
                 // color: Colors.red,
                 child: CachedNetworkImage(
-                  placeholder: (_, __) =>
-                      Image.asset('assets/images/order/jiazaizhong.png'),
-                  imageUrl:
-                      'https://yanxuan.nosdn.127.net/dd9cd8d2dae44d4319ab21919021435b.png',
+                  placeholder: (_, __) => Image.asset('assets/images/order/jiazaizhong.png'),
+                  imageUrl: 'https://yanxuan.nosdn.127.net/dd9cd8d2dae44d4319ab21919021435b.png',
                   height: 90,
                   width: 90,
                 ),
@@ -122,10 +122,7 @@ class Content extends StatelessWidget {
                 "客厅卧室单人沙发躺椅简易休闲榻榻米创意日式布艺小沙发",
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF17191A)),
+                style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400, color: Color(0xFF17191A)),
               ),
             ),
             Positioned(
@@ -136,10 +133,7 @@ class Content extends StatelessWidget {
                 '暖灰色 单沙发舒适款90*110cm',
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                    fontSize: 11.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFFAAB0B3)),
+                style: TextStyle(fontSize: 11.0, fontWeight: FontWeight.w400, color: Color(0xFFAAB0B3)),
               ),
             ),
             Positioned(
@@ -225,8 +219,7 @@ class Bottom extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: 0.0, top: 20),
                     child: Text(
                       '取消订单',
-                      style:
-                          TextStyle(color: Color(0xFF4A4A4A), fontSize: 14.0),
+                      style: TextStyle(color: Color(0xFF4A4A4A), fontSize: 14.0),
                     ),
                   ),
                 ],
@@ -311,8 +304,7 @@ class Bottom extends StatelessWidget {
               children: <Widget>[
                 OutlineButton(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide.none,
-                      borderRadius: BorderRadius.all(Radius.circular(50))),
+                      side: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(50))),
                   onPressed: () {},
                   highlightElevation: 5.0,
                   splashColor: AppColors.splashColor,
@@ -329,8 +321,7 @@ class Bottom extends StatelessWidget {
                 ),
                 OutlineButton(
                   shape: RoundedRectangleBorder(
-                      side: BorderSide.none,
-                      borderRadius: BorderRadius.all(Radius.circular(50))),
+                      side: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(50))),
                   onPressed: () => _showCancelDialog(context),
                   splashColor: AppColors.splashColor,
                   highlightElevation: 5.0,
@@ -349,9 +340,9 @@ class Bottom extends StatelessWidget {
                   decoration: BoxDecoration(),
                   child: FlatButton(
                     shape: RoundedRectangleBorder(
-                        side: BorderSide.none,
-                        borderRadius: BorderRadius.all(Radius.circular(50))),
-                    onPressed: () => MyNavigator.push(PayPage(orderId: "id")),
+                        side: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(50))),
+                    //FIXME: orderId: "id"
+                    onPressed: () => MyNavigator.push(PayPage()),
                     color: AppColors.primaryColor,
                     child: Center(
                       child: Text(

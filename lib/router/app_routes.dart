@@ -16,10 +16,7 @@ abstract class AppRoutes {
   static const Search = 'search';
   static const ShoppingCart = 'shoppingcart';
   static const Supplier = 'supplier';
-  
+
   // notfound
   static const NotFound = '/notfound';
-
-  // setproxy
-  static const Proxy = '/proxy';
 }

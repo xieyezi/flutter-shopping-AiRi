@@ -10,12 +10,13 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:AiRi/styles/colors.dart';
 
 class SearchPage extends GetView<SearchController> {
-  final String title;
-  final String keyword;
-  const SearchPage({Key? key, required this.title, required this.keyword}) : super(key: key);
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final title = 'Get.arguments()';
+    print(Get.arguments());
+    final keyword = '';
     return BaseScaffold(
       leadType: AppBarBackType.Back,
       actions: <Widget>[

@@ -22,6 +22,7 @@ class DetailController extends GetxController {
 
   @override
   void onInit() {
+    print(Get.arguments); //FIXME: goodsId
     initData();
     super.onInit();
   }

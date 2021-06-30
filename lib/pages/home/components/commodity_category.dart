@@ -21,7 +21,8 @@ class CommodityCateGory extends StatelessWidget {
         GestureDetector(
           onTap: i == cateGoryList.length
               ? () => mainState.setTabBarSelectedIndex = 1
-              : () => MyNavigator.push(SearchPage(title: cateGoryList[i].name, keyword: cateGoryList[i].name)),
+              //FIXME:title: cateGoryList[i].name, keyword: cateGoryList[i].name
+              : () => MyNavigator.push(SearchPage()),
           child: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

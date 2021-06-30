@@ -13,7 +13,8 @@ class CommdityItemHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
-      onTap: () => MyNavigator.push(DetailPage(goodsId: goodData.goodsId)),
+      //FIXME:goodsId: goodData.goodsId
+      onTap: () => MyNavigator.push(DetailPage()),
       child: Container(
         height: 240,
         width: (MediaQuery.of(context).size.width - 40) / 2,

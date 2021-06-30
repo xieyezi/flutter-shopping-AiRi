@@ -38,7 +38,8 @@ class Bottom extends StatelessWidget {
             isCancel: true,
             confirmCallback: () {
               /// 查看订单
-              MyNavigator.pushAndRemove(OrderDetailPage(orderId: "dd"));
+              //FIXME:orderId: "dd"
+              MyNavigator.pushAndRemove(OrderDetailPage());
             },
             dismissCallback: () {
               /// 继续采购
