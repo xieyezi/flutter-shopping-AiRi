@@ -11,7 +11,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-
+  
+  get: ^4.1.4
   cupertino_icons: ^1.0.3
   flutter_screenutil: ^5.0.0+2
   provider: ^5.0.0

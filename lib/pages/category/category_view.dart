@@ -1,25 +1,22 @@
 import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:AiRi/pages/category/store/category_page_provider.dart';
+import 'package:get/get.dart';
 import 'package:AiRi/pages/search/search_page.dart';
 import 'package:AiRi/utils/my_navigator.dart';
+import 'category_controller.dart';
 import 'components/menue.dart';
 import 'components/right_list_view.dart';
 
-class CategoryPage extends StatelessWidget {
+class CategoryPage extends GetView<CategoryController> {
   const CategoryPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => CateGoryPageProvider(),
-      child: BaseScaffold(
-        leadType: AppBarBackType.None,
-        actions: <Widget>[AppBarShopCartIconButton()],
-        title: '分类',
-        body: Category(),
-      ),
+    return BaseScaffold(
+      leadType: AppBarBackType.None,
+      actions: <Widget>[AppBarShopCartIconButton()],
+      title: '分类',
+      body: Category(),
     );
   }
 }
@@ -55,9 +52,8 @@ class CategoryState extends State<Category> with AutomaticKeepAliveClientMixin {
         searchBarHeight -
         bottomTabbarHeight;
     // final double rightListViewHeight = 600;
-    final state = Provider.of<CateGoryPageProvider>(context);
-    // List<SubCategoryListModel> listViewData = [];
-    return state.loading
+    final CategoryController state = Get.find();
+    return state.loading.value
         ? MyLoadingWidget()
         : Container(
             color: Color(0xFFFFFFFF),

@@ -1,8 +1,8 @@
 import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/model/category.dart';
 import 'package:AiRi/pages/search/search_page.dart';
 import 'package:AiRi/utils/my_navigator.dart';
+import '../category_model.dart';
 
 class SubCategoryList extends StatefulWidget {
   final double height;

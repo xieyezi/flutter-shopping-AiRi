@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:AiRi/model/category.dart';
+import '../category_model.dart';
 import 'list_view_item.dart';
 
 class RightListView extends StatefulWidget {

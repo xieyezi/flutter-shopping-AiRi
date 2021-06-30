@@ -1,4 +1,4 @@
-import 'package:AiRi/model/category.dart';
+import 'package:AiRi/pages/category/category_model.dart';
 import 'package:AiRi/utils/request.dart';
 
 /// 分类页面
