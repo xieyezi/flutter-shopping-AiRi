@@ -1,8 +1,6 @@
 import 'package:AiRi/components/components.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:AiRi/pages/main/store/main_provider.dart';
 import 'package:AiRi/pages/order/components/order_item.dart';
 
 class OrderPage extends StatefulWidget {
@@ -90,14 +88,6 @@ class OrderPageContainer extends StatelessWidget {
       height: 49,
       child: TabBar(
         controller: _tabController,
-        // indicator: UnderlineIndicator(
-        //   strokeCap: StrokeCap.round,
-        //   borderSide: BorderSide(
-        //     color: AppColors.tabBarActive,
-        //     width: 2,
-        //   ),
-        //   insets: EdgeInsets.only(left: 20, right: 20),
-        // ),
         isScrollable: true,
         labelColor: AppColors.tabBarActive,
         unselectedLabelColor: AppColors.primaryGreyText,
