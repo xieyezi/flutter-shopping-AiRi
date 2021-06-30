@@ -1,5 +1,5 @@
 import 'package:AiRi/components/components.dart';
-import 'package:AiRi/pages/pay/pay_page.dart';
+import 'package:AiRi/pages/pay/pay_view.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import 'package:flutter/material.dart';

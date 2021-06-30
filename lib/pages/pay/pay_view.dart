@@ -3,11 +3,13 @@ import 'package:AiRi/pages/main/store/main_provider.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'components/middle.dart';
 import 'components/top.dart';
+import 'pay_controller.dart';
 
-class PayPage extends StatelessWidget {
+class PayPage extends GetView<PayController> {
   final String orderId;
 
   const PayPage({Key? key, required this.orderId}) : super(key: key);
