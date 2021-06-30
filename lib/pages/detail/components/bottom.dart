@@ -1,5 +1,5 @@
 import 'package:AiRi/components/components.dart';
-import 'package:AiRi/pages/confirm_order/confirm_order.dart';
+import 'package:AiRi/pages/confirm_order/confirm_order_view.dart';
 import 'package:AiRi/pages/supplier/supplier_page.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:flutter/material.dart';

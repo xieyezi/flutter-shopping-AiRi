@@ -1,24 +1,23 @@
 import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:AiRi/pages/detail/components/Introduction_configuration.dart';
-import 'package:AiRi/pages/detail/store/detail_page_provider.dart';
+import 'package:get/get.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/screen.dart';
 import 'components/bottom.dart';
 import 'components/head_swiper.dart';
 import 'components/info.dart';
 import 'components/specifications.dart';
+import 'detail_controller.dart';
+import 'package:AiRi/pages/detail/components/Introduction_configuration.dart';
 
-class DetailPage extends StatelessWidget {
+
+class DetailPage extends GetView<DetailContainer> {
   final String goodsId;
   const DetailPage({Key? key, required this.goodsId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => DetailPageProvider(),
-      child: BaseScaffold(
+    return BaseScaffold(
         leadType: AppBarBackType.Back,
         actions: <Widget>[
           IconButton(
@@ -32,8 +31,7 @@ class DetailPage extends StatelessWidget {
         ],
         title: '商品详情',
         body: DetailContainer(),
-      ),
-    );
+      );
   }
 }
 
@@ -42,8 +40,7 @@ class DetailContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = Provider.of<DetailPageProvider>(context);
-    //////
+    final DetailController state = Get.find();
     return state.loading
         ? MyLoadingWidget()
         : Container(

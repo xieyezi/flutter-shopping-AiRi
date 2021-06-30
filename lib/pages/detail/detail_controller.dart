@@ -1,9 +1,8 @@
-/// detail provider
-import 'package:flutter/foundation.dart';
-import 'package:AiRi/model/detail.dart';
-import 'package:AiRi/services/services.dart';
+import 'package:AiRi/pages/detail/detail_model.dart';
+import 'package:AiRi/services/detail.dart';
+import 'package:get/get.dart';
 
-class DetailPageProvider with ChangeNotifier {
+class DetailController extends GetxController {
   bool loading = true;
   List<String> bannerList = [];
   String contact = '';
@@ -21,14 +20,20 @@ class DetailPageProvider with ChangeNotifier {
   String goodsImgUrl = '';
   List<SpecificationList> specificationList = [];
 
-  DetailPageProvider() {
-    /// 数据加载
+  @override
+  void onInit() {
     initData();
+    super.onInit();
   }
+
+  @override
+  void onReady() {}
+
+  @override
+  void onClose() {}
 
   Future initData() async {
     DetailModel res = await DetailAPI.getData();
-    // print(res.specificationList);
     bannerList = res.bannerList;
     contact = res.contact;
     goodsName = res.goodsName;
@@ -45,6 +50,6 @@ class DetailPageProvider with ChangeNotifier {
     goodsImgUrl = res.goodsImgUrl;
     specificationList = res.specificationList;
     loading = false;
-    notifyListeners();
+    update();
   }
 }

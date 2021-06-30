@@ -1,6 +1,6 @@
 import 'package:AiRi/components/components.dart';
+import 'package:AiRi/pages/choose_address/choose_address_view.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/pages/choose_address/choose_address.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 

@@ -1,7 +1,5 @@
 import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:AiRi/pages/shopping_cart/store/shopping_cart_provider.dart';
 import 'components/bottom.dart';
 import 'components/order_item.dart';
 import 'components/top.dart';
@@ -66,8 +64,6 @@ class ConfirmOrderPageContainer extends StatelessWidget {
 
   /// 订单列表
   Widget _buildOrderList(BuildContext context, {required List orderList}) {
-    // final brandList = Provider.of<ShopingCartProvider>(context).getBrandList;
-    // print(brandList);
     return Container(
       margin: EdgeInsets.symmetric(vertical: 14),
       child: Column(
