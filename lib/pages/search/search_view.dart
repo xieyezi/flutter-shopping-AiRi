@@ -1,12 +1,12 @@
 import 'package:AiRi/components/components.dart';
 import 'package:AiRi/pages/home/home_model.dart';
 import 'package:AiRi/pages/search/search_controller.dart';
+import 'package:AiRi/pages/shopping_cart/shopping_cart_view.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import 'package:AiRi/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:AiRi/pages/shopping_cart/cart_page.dart';
 import 'package:AiRi/styles/colors.dart';
 
 class SearchPage extends GetView<SearchController> {

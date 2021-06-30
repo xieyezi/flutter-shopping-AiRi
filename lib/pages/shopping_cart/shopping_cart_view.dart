@@ -1,12 +1,11 @@
 import 'package:AiRi/components/components.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:tuple/tuple.dart';
-import 'package:AiRi/pages/shopping_cart/store/shopping_cart_provider.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
+import 'package:get/get.dart';
 import 'components/cart_bottom.dart';
 import 'components/cart_item.dart';
+import 'shopping_cart_controller.dart';
 
 class CartPage extends StatefulWidget {
   @override
@@ -14,39 +13,32 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  final _provider = ShopingCartProvider();
-
+  final ShoppingCartController state = Get.find();
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => _provider,
-      child: BaseScaffold(
-        title: '购物车',
-        actions: <Widget>[
-          Selector<ShopingCartProvider, Tuple2<Function, bool>>(
-            builder: (_, tuple, __) {
-              return IconButton(
-                icon: Text(
-                  tuple.item2 ? '完成' : '编辑',
-                  style: TextStyle(color: AppColors.primaryGreyText, fontSize: 14, fontWeight: FontWeight.w400),
-                ),
-                onPressed: () => tuple.item1(),
-              );
-            },
-            selector: (_, provider) => Tuple2(provider.changeEditMode, provider.isEditMode),
+    return BaseScaffold(
+      title: '购物车',
+      actions: <Widget>[
+        IconButton(
+          icon: Text(
+            state.isEditMode ? '完成' : '编辑',
+            style: TextStyle(color: AppColors.primaryGreyText, fontSize: 14, fontWeight: FontWeight.w400),
           ),
-        ],
-        body: CartContainer(),
-      ),
+          onPressed: () => state.changeEditMode(),
+        )
+      ],
+      body: CartContainer(),
     );
   }
 }
 
 class CartContainer extends StatelessWidget {
   const CartContainer({Key? key}) : super(key: key);
+
   Widget _listItemBuilder(BuildContext context, int index) {
-    // 取出数据
-    final brandList = Provider.of<ShopingCartProvider>(context).getBrandList;
+    final ShoppingCartController state = Get.find();
+    final brandList = state.getBrandList;
+
     return Container(
       color: Color(0xFFF5F7F7),
       padding: EdgeInsets.all(10.0),
@@ -56,8 +48,9 @@ class CartContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 取出数据
-    final brandList = Provider.of<ShopingCartProvider>(context).getBrandList;
+    final ShoppingCartController state = Get.find();
+    final brandList = state.getBrandList;
+
     return Stack(
       children: <Widget>[
         Container(

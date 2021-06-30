@@ -1,6 +1,6 @@
+import 'package:AiRi/pages/supplier/supplier_view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:AiRi/pages/supplier/supplier_page.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 

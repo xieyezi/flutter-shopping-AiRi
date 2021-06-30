@@ -2,8 +2,9 @@
 import 'package:AiRi/styles/colors.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:AiRi/pages/shopping_cart/store/shopping_cart_provider.dart';
+import 'package:get/get.dart';
+import '../shopping_cart_controller.dart';
+import '../shopping_cart_model.dart';
 
 class CartItem extends StatelessWidget {
   // 取出每个品牌的数据
@@ -20,8 +21,9 @@ class CartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 取出方法
-    final selectBrandAllGood = Provider.of<ShopingCartProvider>(context, listen: false).selectBrandAllGood;
+    final ShoppingCartController state = Get.find();
+    final selectBrandAllGood = state.selectBrandAllGood;
+
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -211,9 +213,10 @@ class Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 取出方法
-    final selectSingleGood = Provider.of<ShopingCartProvider>(context, listen: false).selectSingleGood;
-    final addOneGoodItem = Provider.of<ShopingCartProvider>(context, listen: false).addOneGoodItem;
+    final ShoppingCartController state = Get.find();
+    final selectSingleGood = state.selectSingleGood;
+    final addOneGoodItem = state.addOneGoodItem;
+
     return Container(
       height: 142.0,
       child: Stack(

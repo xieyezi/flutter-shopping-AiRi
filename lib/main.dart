@@ -10,7 +10,6 @@ import 'package:AiRi/styles/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'pages/main/main_page.dart';
 import 'pages/main/store/main_provider.dart';
-import 'pages/shopping_cart/store/shopping_cart_global_provider.dart';
 
 Future<void> main() async {
   // 判断是否已经登录
