@@ -1,20 +1,26 @@
 import 'package:AiRi/pages/home/home_model.dart';
-import 'package:flutter/foundation.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:AiRi/model/search.dart';
 import 'package:AiRi/services/search.dart';
+import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'search_model.dart';
 
-class SearchPageProvider with ChangeNotifier {
-  RefreshController refreshController = RefreshController(initialRefresh: false);
+class SearchController extends GetxController {
+     RefreshController refreshController = RefreshController(initialRefresh: false);
   List<GoodsList> result = [];
   bool loading = true;
 
-  SearchPageProvider() {
-    /// 数据加载
-    searchData(keyword: '');
-    notifyListeners();
-  }
-  Future searchData({bool refresh = false, required String keyword}) async {
+    @override
+    void onInit() {
+    super.onInit();
+    }
+
+    @override
+    void onReady() {}
+
+    @override
+    void onClose() {}
+
+    Future searchData({bool refresh = false, required String keyword}) async {
     // print(keyword);
     loading = true;
 
@@ -29,7 +35,7 @@ class SearchPageProvider with ChangeNotifier {
     if (refresh) {
       refreshController.refreshCompleted();
     }
-    notifyListeners();
+    update();
   }
 
   /// 上拉加载
@@ -41,6 +47,6 @@ class SearchPageProvider with ChangeNotifier {
     } else {
       refreshController.loadNoData();
     }
-    notifyListeners();
+    update();
   }
 }

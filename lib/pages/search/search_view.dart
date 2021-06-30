@@ -1,38 +1,35 @@
 import 'package:AiRi/components/components.dart';
 import 'package:AiRi/pages/home/home_model.dart';
+import 'package:AiRi/pages/search/search_controller.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import 'package:AiRi/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:AiRi/pages/search/store/search_provider.dart';
 import 'package:AiRi/pages/shopping_cart/cart_page.dart';
 import 'package:AiRi/styles/colors.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends GetView<SearchController> {
   final String title;
   final String keyword;
   const SearchPage({Key? key, required this.title, required this.keyword}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => SearchPageProvider(),
-      child: BaseScaffold(
-        leadType: AppBarBackType.Back,
-        actions: <Widget>[
-          IconButton(
-            icon: Image.asset(
-              'assets/images/home/gouwuche.png',
-              width: duSetWidth(25),
-              height: duSetHeight(23.5),
-            ),
-            onPressed: () => MyNavigator.push(CartPage()),
+    return BaseScaffold(
+      leadType: AppBarBackType.Back,
+      actions: <Widget>[
+        IconButton(
+          icon: Image.asset(
+            'assets/images/home/gouwuche.png',
+            width: duSetWidth(25),
+            height: duSetHeight(23.5),
           ),
-        ],
-        title: title,
-        body: SerachContainer(keyword: keyword),
-      ),
+          onPressed: () => MyNavigator.push(CartPage()),
+        ),
+      ],
+      title: title,
+      body: SerachContainer(keyword: keyword),
     );
   }
 }
@@ -60,7 +57,7 @@ class _SerachContainerState extends State<SerachContainer> {
 
   @override
   Widget build(BuildContext context) {
-    final state = Provider.of<SearchPageProvider>(context);
+    final SearchController state = Get.find();
     return Container(
       color: AppColors.primaryBackground,
       child: Column(

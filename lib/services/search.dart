@@ -1,4 +1,4 @@
-import 'package:AiRi/model/search.dart';
+import 'package:AiRi/pages/search/search_model.dart';
 import 'package:AiRi/utils/request.dart';
 
 /// 搜索页面
