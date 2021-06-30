@@ -17,6 +17,7 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+   
     return BaseScaffold(
       leadType: AppBarBackType.None,
       actions: <Widget>[AppBarShopCartIconButton()],
@@ -25,9 +26,6 @@ class HomePage extends GetView<HomeController> {
       body: HomePageContainer(),
     );
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }
 
 class HomePageContainer extends StatefulWidget {
@@ -39,6 +37,7 @@ class _HomePageContainerState extends State<HomePageContainer> {
   @override
   Widget build(BuildContext context) {
     final HomeController state = Get.find();
+
     return state.loading
         ? MyLoadingWidget()
         : Container(

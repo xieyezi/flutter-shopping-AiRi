@@ -4,27 +4,27 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'home_model.dart';
 
 class HomeController extends GetxController {
-   bool loading = true;
-     RefreshController refreshController =
-      RefreshController(initialRefresh: false);
-   
-    List<String> banerList = [];
-    List<BrandListElement> cateGoryList = [];
-    List<BrandListElement> brandList = [];
-    List<GoodsList> hotList = [];
+  bool loading = true;
+  RefreshController refreshController = RefreshController(initialRefresh: false);
 
-    @override
-    void onInit() {
+  List<String> banerList = [];
+  List<BrandListElement> cateGoryList = [];
+  List<BrandListElement> brandList = [];
+  List<GoodsList> hotList = [];
+
+  @override
+  void onInit() {
+    initData();
     super.onInit();
-    }
+  }
 
-    @override
-    void onReady() {}
+  @override
+  void onReady() {}
 
-    @override
-    void onClose() {}
+  @override
+  void onClose() {}
 
-    Future initData({bool refresh = false}) async {
+  Future initData({bool refresh = false}) async {
     HomeModel res = await HomeAPI.getHomeData();
 
     /// 初次加载

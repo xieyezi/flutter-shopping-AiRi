@@ -8,6 +8,7 @@ import 'package:AiRi/pages/detail/detail_view.dart';
 import 'package:AiRi/pages/home/home_binding.dart';
 import 'package:AiRi/pages/home/home_view.dart';
 import 'package:AiRi/pages/login/login_page.dart';
+import 'package:AiRi/pages/main/main_binding.dart';
 import 'package:AiRi/pages/main/main_view.dart';
 import 'package:AiRi/pages/manage/manage_binding.dart';
 import 'package:AiRi/pages/manage/manage_view.dart';
@@ -34,6 +35,7 @@ class AppPages {
     GetPage(
       name: AppRoutes.Main,
       page: () => MainPage(),
+      binding: MainBinding(),
     ),
     GetPage(
       name: AppRoutes.Login,

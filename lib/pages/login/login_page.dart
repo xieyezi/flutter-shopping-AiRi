@@ -1,8 +1,8 @@
 import 'package:AiRi/components/components.dart';
 import 'package:AiRi/pages/main/main_view.dart';
 import 'package:AiRi/styles/styles.dart';
+import 'package:AiRi/utils/local_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -38,8 +38,7 @@ class _LoginFormState extends State<LoginPage> {
   void _loginAction(BuildContext context) async {
     if ((_formKey.currentState as FormState).validate()) {
       // 验证通过表示已经登录成功
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setBool('isLogin', true);
+      LoacalStorage().setBool('STORAGE_DEVICE_ALREADY_LOGIN_KEY', true);
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
