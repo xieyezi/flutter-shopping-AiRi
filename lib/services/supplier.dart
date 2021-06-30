@@ -1,4 +1,4 @@
-import 'package:AiRi/model/supplier.dart';
+import 'package:AiRi/pages/supplier/supplier_model.dart';
 import 'package:AiRi/utils/request.dart';
 
 /// 详情页面

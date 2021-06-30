@@ -1,8 +1,9 @@
 import 'package:AiRi/pages/home/home_model.dart';
 import 'package:AiRi/pages/search/search_view.dart';
+import 'package:AiRi/pages/supplier/supplier_controller.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:AiRi/components/base_scaffold.dart';
 import 'package:AiRi/components/commdity_item.dart';
@@ -12,29 +13,25 @@ import 'package:AiRi/components/my_custom_footer.dart';
 import 'package:AiRi/components/my_divider.dart';
 import 'package:AiRi/components/my_loading.dart';
 import 'package:AiRi/pages/supplier/components/search_bar.dart';
-import 'package:AiRi/pages/supplier/store/supplier_provider.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 
-class SupplierPage extends StatelessWidget {
+class SupplierPage extends GetView<SupplierController> {
   final String supplierId;
   const SupplierPage({Key? key, required this.supplierId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => SupplierPageProvider(),
-      child: BaseScaffold(
-        appBar: MyAppBar(
-          brightness: Brightness.dark,
-          leadingType: AppBarBackType.Back,
-          leading: AppBarBack(AppBarBackType.Back, color: Colors.white),
-          backgroundColor: AppColors.supplierColor1,
-          centerTitle: true,
-          title: MyTitle('优衣库', color: Colors.white),
-        ),
-        body: SupplierContainer(),
+    return BaseScaffold(
+      appBar: MyAppBar(
+        brightness: Brightness.dark,
+        leadingType: AppBarBackType.Back,
+        leading: AppBarBack(AppBarBackType.Back, color: Colors.white),
+        backgroundColor: AppColors.supplierColor1,
+        centerTitle: true,
+        title: MyTitle('优衣库', color: Colors.white),
       ),
+      body: SupplierContainer(),
     );
   }
 }
@@ -276,7 +273,7 @@ class SupplierContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = Provider.of<SupplierPageProvider>(context);
+     final SupplierController state = Get.find();
     TextStyle infoTextStyle = TextStyle(
       color: Colors.white,
       fontSize: 12,

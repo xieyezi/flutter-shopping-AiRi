@@ -1,13 +1,12 @@
-/// 供应商provider
 import 'package:AiRi/pages/home/home_model.dart';
-import 'package:flutter/foundation.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:AiRi/model/supplier.dart';
 import 'package:AiRi/services/services.dart';
+import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class SupplierPageProvider with ChangeNotifier {
-  RefreshController refreshController =
-      RefreshController(initialRefresh: false);
+import 'supplier_model.dart';
+
+class SupplierController extends GetxController {
+  RefreshController refreshController = RefreshController(initialRefresh: false);
   bool loading = true;
   String supplierName = '';
   String contact = '';
@@ -19,10 +18,17 @@ class SupplierPageProvider with ChangeNotifier {
 
   List<GoodsList> supplierList = [];
 
-  SupplierPageProvider() {
-    /// 数据加载
+  @override
+  void onInit() {
     initData();
+    super.onInit();
   }
+
+  @override
+  void onReady() {}
+
+  @override
+  void onClose() {}
 
   Future initData({bool refresh = false}) async {
     SupplierModel res = await SupplierAPI.getData();
@@ -34,7 +40,7 @@ class SupplierPageProvider with ChangeNotifier {
     supplierImgUrl = res.supplierImgUrl;
     introDuceText = res.introDuceText;
     loading = false;
-    notifyListeners();
+    update();
   }
 
   /// 上拉加载
@@ -47,6 +53,6 @@ class SupplierPageProvider with ChangeNotifier {
     } else {
       refreshController.loadNoData();
     }
-    notifyListeners();
+    update();
   }
 }
