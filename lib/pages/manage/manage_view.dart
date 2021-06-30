@@ -1,25 +1,22 @@
 import 'package:AiRi/components/components.dart';
 import 'package:AiRi/pages/home/home_model.dart';
-import 'package:AiRi/pages/manage/store/manage_page_provider.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/styles/iconfont.dart';
 import 'package:AiRi/styles/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'manage_controller.dart';
 
-class ManagePage extends StatelessWidget {
+class ManagePage extends GetView<ManageController> {
   final String? supplierId;
   const ManagePage({Key? key, this.supplierId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => ManagePageProvider(),
-      child: Scaffold(
-        body: ManageContainer(),
-        backgroundColor: AppColors.supplierColor1,
-      ),
+    return Scaffold(
+      body: ManageContainer(),
+      backgroundColor: AppColors.supplierColor1,
     );
   }
 }
@@ -29,7 +26,7 @@ class ManageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = Provider.of<ManagePageProvider>(context);
+    final ManageController state = Get.find();
     return Container(
       color: AppColors.primaryBackground,
       child: SmartRefresher(

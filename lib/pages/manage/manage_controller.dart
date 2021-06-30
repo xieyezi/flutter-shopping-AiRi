@@ -1,18 +1,24 @@
 import 'package:AiRi/pages/home/home_model.dart';
-import 'package:flutter/foundation.dart';
+import 'package:AiRi/services/home.dart';
+import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:AiRi/services/services.dart';
 
-class ManagePageProvider with ChangeNotifier {
+class ManageController extends GetxController {
   bool loading = true;
   List<GoodsList> hotList = [];
-  RefreshController refreshController =
-      RefreshController(initialRefresh: false);
+  RefreshController refreshController = RefreshController(initialRefresh: false);
 
-  ManagePageProvider() {
-    /// 首页数据加载
-    initData();
+  @override
+  void onInit() {
+    super.onInit();
   }
+
+  @override
+  void onReady() {}
+
+  @override
+  void onClose() {}
+
   Future initData({bool refresh = false}) async {
     HomeModel res = await HomeAPI.getHomeData();
     hotList = res.hotList;
@@ -24,7 +30,7 @@ class ManagePageProvider with ChangeNotifier {
       loading = false;
       refreshController.refreshCompleted();
     }
-    notifyListeners();
+    update();
   }
 
   /// 上拉加载
@@ -37,6 +43,6 @@ class ManagePageProvider with ChangeNotifier {
     } else {
       refreshController.loadNoData();
     }
-    notifyListeners();
+    update();
   }
 }
