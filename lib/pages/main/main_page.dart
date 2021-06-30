@@ -1,11 +1,11 @@
 import 'package:AiRi/pages/category/category_view.dart';
 import 'package:AiRi/pages/home/home_view.dart';
 import 'package:AiRi/pages/main/components/my_bottom_navigation_bar.dart';
-import 'package:AiRi/pages/manage/manage_page.dart';
+import 'package:AiRi/pages/manage/manage_view.dart';
+import 'package:AiRi/pages/order/order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:AiRi/pages/order/order_page.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import 'store/main_provider.dart';
 
