@@ -1,4 +1,4 @@
-import 'package:AiRi/model/home.dart';
+import 'package:AiRi/pages/home/home_model.dart';
 import 'package:AiRi/utils/request.dart';
 
 /// 首页

@@ -1,7 +1,6 @@
+import 'package:AiRi/pages/home/home_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:AiRi/model/goods.dart';
-import 'package:AiRi/model/home.dart';
 import 'package:AiRi/services/services.dart';
 
 class ManagePageProvider with ChangeNotifier {

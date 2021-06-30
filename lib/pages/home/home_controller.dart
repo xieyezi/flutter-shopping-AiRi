@@ -1,23 +1,30 @@
-import 'package:flutter/foundation.dart';
+import 'package:AiRi/services/home.dart';
+import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:AiRi/model/goods.dart';
-import 'package:AiRi/model/home.dart';
-import 'package:AiRi/services/services.dart';
+import 'home_model.dart';
 
-class HomePageProvider with ChangeNotifier {
-  RefreshController refreshController =
+class HomeController extends GetxController {
+   bool loading = true;
+     RefreshController refreshController =
       RefreshController(initialRefresh: false);
-  bool loading = true;
-  List<String> banerList = [];
-  List<BrandListElement> cateGoryList = [];
-  List<BrandListElement> brandList = [];
-  List<GoodsList> hotList = [];
+   
+    List<String> banerList = [];
+    List<BrandListElement> cateGoryList = [];
+    List<BrandListElement> brandList = [];
+    List<GoodsList> hotList = [];
 
-  HomePageProvider() {
-    /// 首页数据加载
-    initData();
-  }
-  Future initData({bool refresh = false}) async {
+    @override
+    void onInit() {
+    super.onInit();
+    }
+
+    @override
+    void onReady() {}
+
+    @override
+    void onClose() {}
+
+    Future initData({bool refresh = false}) async {
     HomeModel res = await HomeAPI.getHomeData();
 
     /// 初次加载
@@ -36,7 +43,7 @@ class HomePageProvider with ChangeNotifier {
       loading = false;
       refreshController.refreshCompleted();
     }
-    notifyListeners();
+    update();
   }
 
   /// 上拉加载
@@ -49,6 +56,6 @@ class HomePageProvider with ChangeNotifier {
     } else {
       refreshController.loadNoData();
     }
-    notifyListeners();
+    update();
   }
 }

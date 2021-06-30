@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'goods.dart';
+import 'package:AiRi/pages/home/home_model.dart';
 
 SearchModel searchModelFromJson(String str) => SearchModel.fromJson(json.decode(str));
 

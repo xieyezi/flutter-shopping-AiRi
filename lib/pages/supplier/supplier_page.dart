@@ -1,3 +1,4 @@
+import 'package:AiRi/pages/home/home_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +10,6 @@ import 'package:AiRi/components/my_app_bar.dart';
 import 'package:AiRi/components/my_custom_footer.dart';
 import 'package:AiRi/components/my_divider.dart';
 import 'package:AiRi/components/my_loading.dart';
-import 'package:AiRi/model/goods.dart';
 import 'package:AiRi/pages/search/search_page.dart';
 import 'package:AiRi/pages/supplier/components/search_bar.dart';
 import 'package:AiRi/pages/supplier/store/supplier_provider.dart';

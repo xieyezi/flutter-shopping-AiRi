@@ -1,39 +1,28 @@
-
 import 'package:AiRi/components/components.dart';
+import 'package:AiRi/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:AiRi/model/goods.dart';
 import 'package:AiRi/pages/home/components/brand_swiper.dart';
 import 'package:AiRi/pages/home/components/commodity_category.dart';
 import 'package:AiRi/pages/home/components/head_swiper.dart';
-import 'package:AiRi/pages/home/store/home_page_provider.dart';
 import 'package:AiRi/pages/main/components/preload_images.dart';
 import 'package:AiRi/pages/search/search_page.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
+import 'home_model.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage>
-    with AutomaticKeepAliveClientMixin {
-  @override
   Widget build(BuildContext context) {
-    super.build(context);
-    return ChangeNotifierProvider(
-      create: (_) => HomePageProvider(),
-      child: BaseScaffold(
-        leadType: AppBarBackType.None,
-        actions: <Widget>[AppBarShopCartIconButton()],
-        title: '首页',
-        centerTitle: true,
-        body: HomePageContainer(),
-      ),
+    return BaseScaffold(
+      leadType: AppBarBackType.None,
+      actions: <Widget>[AppBarShopCartIconButton()],
+      title: '首页',
+      centerTitle: true,
+      body: HomePageContainer(),
     );
   }
 
@@ -49,8 +38,7 @@ class HomePageContainer extends StatefulWidget {
 class _HomePageContainerState extends State<HomePageContainer> {
   @override
   Widget build(BuildContext context) {
-    final state = Provider.of<HomePageProvider>(context);
-
+    final HomeController state = Get.find();
     return state.loading
         ? MyLoadingWidget()
         : Container(
@@ -76,9 +64,8 @@ class _HomePageContainerState extends State<HomePageContainer> {
 
                         /// 搜索框
                         SliverToBoxAdapter(
-                          child: SearchBar(
-                              myOntap: (value) => MyNavigator.push(
-                                  SearchPage(title: '搜索', keyword: value))),
+                          child:
+                              SearchBar(myOntap: (value) => MyNavigator.push(SearchPage(title: '搜索', keyword: value))),
                         ),
 
                         /// 顶部轮播图
@@ -90,8 +77,7 @@ class _HomePageContainerState extends State<HomePageContainer> {
 
                         /// 商品分类区域
                         SliverToBoxAdapter(
-                          child: CommodityCateGory(
-                              cateGoryList: state.cateGoryList),
+                          child: CommodityCateGory(cateGoryList: state.cateGoryList),
                         ),
 
                         /// 品牌轮播区域

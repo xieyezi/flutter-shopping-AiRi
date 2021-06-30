@@ -1,11 +1,11 @@
 import 'package:AiRi/components/my_cahenetwork_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:AiRi/model/home.dart';
 import 'package:AiRi/pages/main/store/main_provider.dart';
 import 'package:AiRi/pages/search/search_page.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import '../../../styles/colors.dart';
+import '../home_model.dart';
 
 class CommodityCateGory extends StatelessWidget {
   final List<BrandListElement> cateGoryList;

@@ -1,5 +1,5 @@
 import 'package:AiRi/components/components.dart';
-import 'package:AiRi/model/goods.dart';
+import 'package:AiRi/pages/home/home_model.dart';
 import 'package:AiRi/pages/manage/store/manage_page_provider.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/styles/iconfont.dart';

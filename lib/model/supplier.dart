@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:AiRi/model/goods.dart';
+import 'package:AiRi/pages/home/home_model.dart';
 
 SupplierModel supplierModelFromJson(String str) => SupplierModel.fromJson(json.decode(str));
 
