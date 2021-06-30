@@ -1,5 +1,5 @@
 import 'package:AiRi/components/components.dart';
-import 'package:AiRi/pages/main/store/main_provider.dart';
+import 'package:AiRi/pages/main/main_controller.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 import 'package:flutter/material.dart';
@@ -126,8 +126,8 @@ class PayPageContainer extends StatelessWidget {
             isCancel: true,
             confirmCallback: () {
               // 查看订单
-              final mainProvder = Provider.of<MainProvider>(context, listen: false);
-              mainProvder.setTabBarSelectedIndex = 1;
+              final MainController mainState = Get.find();
+              mainState.setTabBarSelectedIndex = 1;
             },
             dismissCallback: () {
               // 继续采购

@@ -1,7 +1,9 @@
 import 'package:AiRi/components/components.dart';
+import 'package:AiRi/pages/main/main_controller.dart';
 import 'package:AiRi/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:AiRi/pages/order/components/order_item.dart';
+import 'package:get/get.dart';
 
 class OrderPage extends StatefulWidget {
   OrderPage({Key? key}) : super(key: key);
@@ -52,7 +54,7 @@ class OrderPageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List orderList = [1, 1, 1];
-    final mainProvder = Provider.of<MainProvider>(context, listen: false);
+    final MainController mainState = Get.find();
 
     return Column(
       children: <Widget>[
@@ -68,7 +70,7 @@ class OrderPageContainer extends StatelessWidget {
                         img: 'assets/images/order/empty.png',
                         tipText: '没有相关订单哦~',
                         buttonText: '去采购',
-                        buttonTap: () => {mainProvder.setTabBarSelectedIndex = 0},
+                        buttonTap: () => mainState.setTabBarSelectedIndex = 0,
                       )
                     : ListView.builder(
                         itemCount: orderList.length,

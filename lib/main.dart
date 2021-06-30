@@ -1,43 +1,16 @@
-import 'dart:io';
+import 'package:AiRi/global.dart';
 import 'package:AiRi/pages/login/login_page.dart';
+import 'package:AiRi/pages/main/main_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:oktoast/oktoast.dart';
-import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:AiRi/styles/colors.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'pages/main/main_page.dart';
-import 'pages/main/store/main_provider.dart';
 
-Future<void> main() async {
-  // 判断是否已经登录
-  WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  bool isLogin = prefs.getBool('isLogin') ?? false;
-  print('是否已经登录---' + isLogin.toString());
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => MainProvider()),
-        ChangeNotifierProvider(create: (_) => ShopingCartGlobalProvider()),
-      ],
-      child: MyApp(
-        isLogin: isLogin,
-      ),
-    ),
-  );
-  // 透明状态栏
-  if (Platform.isAndroid) {
-    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
-    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-  }
-}
+void main() => Global.init().then((e) => runApp(MyApp()));
 
 class MyApp extends StatelessWidget {
-  final isLogin;
-  const MyApp({Key? key, this.isLogin}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +38,7 @@ class MyApp extends StatelessWidget {
             accentColor: AppColors.primaryColorAccent,
           ),
           debugShowCheckedModeBanner: false,
-          home: isLogin ? MainPage() : LoginPage(),
+          home: Global.isLogin ? MainPage() : LoginPage(),
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:AiRi/components/components.dart';
-import 'package:AiRi/pages/main/main_page.dart';
+import 'package:AiRi/pages/main/main_view.dart';
 import 'package:AiRi/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

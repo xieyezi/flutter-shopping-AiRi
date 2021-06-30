@@ -1,11 +1,10 @@
-
 import 'package:AiRi/components/components.dart';
+import 'package:AiRi/pages/shopping_cart/shopping_cart_controller.dart';
 import 'package:AiRi/styles/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:AiRi/pages/confirm_order/components/remark.dart';
 import 'package:AiRi/pages/shopping_cart/components/cart_item.dart';
-import 'package:AiRi/pages/shopping_cart/store/shopping_cart_provider.dart';
+import 'package:get/get.dart';
 
 class OrderItem extends StatelessWidget {
   const OrderItem({Key? key}) : super(key: key);
@@ -53,8 +52,7 @@ class OrderItem extends StatelessWidget {
         spacing: 10.0,
         alignment: WrapAlignment.start,
         children: goodsList.map<Widget>((item) {
-              return _buildGoodsBannerItem(
-                  "https://yanxuan.nosdn.127.net/3d70af62c5461e795644b12721508372.png");
+              return _buildGoodsBannerItem("https://yanxuan.nosdn.127.net/3d70af62c5461e795644b12721508372.png");
             }).toList() +
             [_buildGoodTotalNum(context, goodsList.length)],
       ),
@@ -169,53 +167,48 @@ class OrderItem extends StatelessWidget {
 
   /// 对话框
   Widget _buildDialog(BuildContext context) {
-    /// 对话框不属于wdiget树，这里必须用provider重新包裹一下
-    return ChangeNotifierProvider(
-      create: (_) => ShopingCartProvider(),
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.75,
-        padding: EdgeInsets.all(10),
-        child: Stack(
-          children: <Widget>[
-            Positioned(
-              top: 0,
-              right: 0,
-              child: GestureDetector(
-                onTap: () => Navigator.pop(context),
-                child: Container(
-                  height: 30,
-                  child: Icon(
-                    Icons.close,
-                    color: Color(0xFF000000),
-                    size: 24.0,
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 30,
-              left: 0,
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.75,
+      padding: EdgeInsets.all(10),
+      child: Stack(
+        children: <Widget>[
+          Positioned(
+            top: 0,
+            right: 0,
+            child: GestureDetector(
+              onTap: () => Navigator.pop(context),
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.75 -
-                    30 -
-                    MediaQuery.of(context).padding.bottom,
-                width: MediaQuery.of(context).size.width - 20,
-                child: ListView.builder(
-                  itemBuilder: _listItemBuilder,
-                  itemCount: 1,
+                height: 30,
+                child: Icon(
+                  Icons.close,
+                  color: Color(0xFF000000),
+                  size: 24.0,
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            top: 30,
+            left: 0,
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.75 - 30 - MediaQuery.of(context).padding.bottom,
+              width: MediaQuery.of(context).size.width - 20,
+              child: ListView.builder(
+                itemBuilder: _listItemBuilder,
+                itemCount: 1,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 
   /// 构建对话框的每一项
   Widget _listItemBuilder(BuildContext context, int index) {
-    // 取出数据
-    final brandList = Provider.of<ShopingCartProvider>(context).getBrandList;
+    final ShoppingCartController state = Get.find();
+    final brandList = state.getBrandList;
+
     return Container(
       child: CartItem(
         brandData: brandList[0],

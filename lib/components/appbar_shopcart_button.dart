@@ -1,8 +1,8 @@
 import 'dart:io';
+import 'package:AiRi/pages/shopping_cart/shopping_cart_global_controller.dart';
+import 'package:AiRi/pages/shopping_cart/shopping_cart_view.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:AiRi/pages/shopping_cart/cart_page.dart';
-import 'package:AiRi/pages/shopping_cart/store/shopping_cart_global_provider.dart';
+import 'package:get/get.dart';
 import 'package:AiRi/utils/my_navigator.dart';
 
 class AppBarShopCartIconButton extends StatelessWidget {
@@ -12,26 +12,23 @@ class AppBarShopCartIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ShoppingCartGlobalController state = Get.find();
+
     return IconButton(
       padding: const EdgeInsets.fromLTRB(6, 6, 8, 6),
       icon: Container(
         child: Stack(
           children: <Widget>[
             Center(
-              child: Image.asset('assets/images/home/gouwuche.png',
-                  width: 22, height: 22),
+              child: Image.asset('assets/images/home/gouwuche.png', width: 22, height: 22),
             ),
             Positioned(
               right: 0,
               top: 0,
-              child: Selector<ShopingCartGlobalProvider, String>(
-                  builder: (_, count, __) {
-                    return Visibility(
-                      visible: count != "0",
-                      child: _badgeWidget(count),
-                    );
-                  },
-                  selector: (context, model) => model.goodsCountString),
+              child: Visibility(
+                visible: state.goodsCountString != "0",
+                child: _badgeWidget(state.goodsCountString),
+              ),
             )
           ],
         ),
@@ -50,8 +47,7 @@ class AppBarShopCartIconButton extends StatelessWidget {
         constraints: BoxConstraints(minWidth: 14),
         child: Container(
           height: 14,
-          padding: EdgeInsets.only(
-              left: 4, right: 4, bottom: Platform.isIOS ? 1 : 0),
+          padding: EdgeInsets.only(left: 4, right: 4, bottom: Platform.isIOS ? 1 : 0),
           decoration: BoxDecoration(
             color: Color(0xFFB80821),
             borderRadius: BorderRadius.circular(12),

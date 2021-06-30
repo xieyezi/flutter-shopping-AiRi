@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:AiRi/pages/main/store/main_provider.dart';
 
 class MyNavigator {
   // 设置一次 context 方便后面
@@ -33,8 +31,8 @@ class MyNavigator {
   /// 返回首页
   static void popToHome({BuildContext? context}) {
     final _ctx = context ?? ctx;
-    final mainProvder = Provider.of<MainProvider>(_ctx, listen: false);
-    mainProvder.setTabBarSelectedIndex = 0;
+    // final mainProvder = Provider.of<MainProvider>(_ctx, listen: false);
+    // mainProvder.setTabBarSelectedIndex = 0;
     Navigator.popUntil(_ctx, (predicate) {
       return predicate.isFirst;
     });

@@ -1,7 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import '../store/main_provider.dart';
+
+import '../main_controller.dart';
 
 // tabBar数据B
 const List<Map<String, String>> _tabBarData = [
@@ -44,24 +46,22 @@ class MyBottomNavigationBar extends StatelessWidget {
 
   /// bottomNavBar
   _getBottomNavigationBar(BuildContext context) {
+    final MainController mainState = Get.find();
+
     return Stack(
       children: <Widget>[
-        Selector<MainProvider, int>(
-            builder: (_, index, __) {
-              return BottomNavigationBar(
-                currentIndex: index,
-                type: BottomNavigationBarType.fixed,
-                selectedFontSize: 10,
-                unselectedFontSize: 10,
-                unselectedItemColor: Color(0xff999999),
-                selectedItemColor: Color(0xFF424242),
-                backgroundColor: Color(0xfffefefe),
-                elevation: 0,
-                onTap: this.onTap,
-                items: _getTabBar(context),
-              );
-            },
-            selector: (_, model) => model.getTabBarSelectedIndex),
+        BottomNavigationBar(
+          currentIndex: mainState.getTabBarSelectedIndex,
+          type: BottomNavigationBarType.fixed,
+          selectedFontSize: 10,
+          unselectedFontSize: 10,
+          unselectedItemColor: Color(0xff999999),
+          selectedItemColor: Color(0xFF424242),
+          backgroundColor: Color(0xfffefefe),
+          elevation: 0,
+          onTap: this.onTap,
+          items: _getTabBar(context),
+        ),
         Divider(
           height: 0.5,
           color: Color(0xffdfdfdf),
@@ -117,29 +117,31 @@ class MyBottomNavigationBar extends StatelessWidget {
   }
 
   _getBadge() {
-    return Consumer<MainProvider>(
-      builder: (context, MainProvider state, child) => Opacity(
-        opacity: state.isMessageCount ? 1 : 0,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            color: Color(0xfff8d949),
+    final MainController state = Get.find();
+    return Opacity(
+      opacity: state.isMessageCount ? 1 : 0,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Color(0xfff8d949),
+        ),
+        height: 18,
+        padding: const EdgeInsets.only(left: 6, right: 6),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minWidth: 6,
           ),
-          height: 18,
-          padding: const EdgeInsets.only(left: 6, right: 6),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minWidth: 6,
-            ),
-            child: Center(
-              child: Text(
-                state.getMessageCount,
-                style: TextStyle(color: Colors.white, fontSize: 10.5),
-              ),
+          child: Center(
+            child: Text(
+              state.getMessageCount,
+              style: TextStyle(color: Colors.white, fontSize: 10.5),
             ),
           ),
         ),
       ),
     );
+    // return Consumer<MainProvider>(
+    //   builder: (context, MainProvider state, child) => ,
+    // );
   }
 }

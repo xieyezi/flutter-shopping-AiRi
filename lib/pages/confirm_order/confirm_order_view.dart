@@ -9,18 +9,13 @@ class ConfirmOrderPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => ShopingCartProvider()),
-      ],
-      child: BaseScaffold(
-        leadType: AppBarBackType.Back,
-        title: '确认订单',
-        body: GestureDetector(
-          behavior: HitTestBehavior.translucent,
-          onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
-          child: ConfirmOrderPageContainer(),
-        ),
+    return BaseScaffold(
+      leadType: AppBarBackType.Back,
+      title: '确认订单',
+      body: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
+        child: ConfirmOrderPageContainer(),
       ),
     );
   }
@@ -39,8 +34,7 @@ class ConfirmOrderPageContainer extends StatelessWidget {
           Container(
             width: double.infinity,
             height: double.infinity,
-            margin: EdgeInsets.only(
-                bottom: 70 + MediaQuery.of(context).padding.bottom),
+            margin: EdgeInsets.only(bottom: 70 + MediaQuery.of(context).padding.bottom),
             child: SingleChildScrollView(
               physics: AlwaysScrollableScrollPhysics(),
               child: Column(

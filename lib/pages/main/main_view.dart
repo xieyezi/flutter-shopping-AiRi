@@ -1,13 +1,13 @@
 import 'package:AiRi/pages/category/category_view.dart';
 import 'package:AiRi/pages/home/home_view.dart';
-import 'package:AiRi/pages/main/components/my_bottom_navigation_bar.dart';
 import 'package:AiRi/pages/manage/manage_view.dart';
 import 'package:AiRi/pages/order/order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-import 'package:AiRi/utils/my_navigator.dart';
-import 'store/main_provider.dart';
+import 'package:AiRi/pages/main/components/my_bottom_navigation_bar.dart';
+import 'package:get/get.dart';
+
+import 'main_controller.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -29,9 +29,7 @@ class _MainPageState extends State<MainPage> with AutomaticKeepAliveClientMixin 
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final mainState = Provider.of<MainProvider>(context, listen: false);
-    // 保存 ctx
-    MyNavigator.ctx = context;
+    final MainController mainState = Get.find();
 
     /// 根据iphone X 高度适配,高度去掉 顶部、底部
     return ScreenUtilInit(
