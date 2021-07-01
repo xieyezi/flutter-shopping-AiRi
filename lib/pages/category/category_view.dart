@@ -1,8 +1,7 @@
 import 'package:AiRi/components/components.dart';
-import 'package:AiRi/pages/search/search_view.dart';
+import 'package:AiRi/router/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:AiRi/utils/my_navigator.dart';
 import 'category_controller.dart';
 import 'components/menue.dart';
 import 'components/right_list_view.dart';
@@ -60,8 +59,10 @@ class CategoryState extends State<Category> with AutomaticKeepAliveClientMixin {
               child: Column(
                 children: <Widget>[
                   SearchBar(
-                    //FIXME:title: '搜索', keyword: value
-                    myOntap: (value) => MyNavigator.push(SearchPage()),
+                    myOntap: (value) => Get.toNamed(AppRoutes.Search, arguments: {
+                      'title': '搜索',
+                      'keyword': value,
+                    }),
                   ),
                   Expanded(
                     child: Row(

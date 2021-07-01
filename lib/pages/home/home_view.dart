@@ -1,6 +1,6 @@
 import 'package:AiRi/components/components.dart';
 import 'package:AiRi/pages/home/home_controller.dart';
-import 'package:AiRi/pages/search/search_view.dart';
+import 'package:AiRi/router/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -9,7 +9,6 @@ import 'package:AiRi/pages/home/components/commodity_category.dart';
 import 'package:AiRi/pages/home/components/head_swiper.dart';
 import 'package:AiRi/pages/main/components/preload_images.dart';
 import 'package:AiRi/styles/colors.dart';
-import 'package:AiRi/utils/my_navigator.dart';
 import 'home_model.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -62,8 +61,13 @@ class _HomePageContainerState extends State<HomePageContainer> {
                           /// 搜索框
                           SliverToBoxAdapter(
                             child:
-                                //FIXME: title: '搜索', keyword: value
-                                SearchBar(myOntap: (value) => MyNavigator.push(SearchPage())),
+                                // title: '搜索', keyword: value
+                                SearchBar(
+                              myOntap: (value) => Get.toNamed(AppRoutes.Search, arguments: {
+                                'title': '搜索',
+                                'keyword': value,
+                              }),
+                            ),
                           ),
 
                           /// 顶部轮播图

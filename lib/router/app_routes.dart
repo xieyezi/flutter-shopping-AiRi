@@ -9,13 +9,13 @@ abstract class AppRoutes {
   static const ChooseAddress = '/choose_address';
   static const ConfirmOrder = '/confirm_order';
   static const Detail = '/detail';
-  static const Manage = 'manage';
-  static const OrderList = 'order_list';
-  static const OrderDetail = 'order_detail';
-  static const Pay = 'pay';
-  static const Search = 'search';
-  static const ShoppingCart = 'shoppingcart';
-  static const Supplier = 'supplier';
+  static const Manage = '/manage';
+  static const OrderList = '/order_list';
+  static const OrderDetail = '/order_detail';
+  static const Pay = '/pay';
+  static const Search = '/search';
+  static const ShoppingCart = '/shoppingcart';
+  static const Supplier = '/supplier';
 
   // notfound
   static const NotFound = '/notfound';

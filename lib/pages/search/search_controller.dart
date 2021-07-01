@@ -5,13 +5,14 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'search_model.dart';
 
 class SearchController extends GetxController {
-  RefreshController refreshController = RefreshController(initialRefresh: false);
-  List<GoodsList> result = [];
   bool loading = true;
+  List<GoodsList> result = [];
+  RefreshController refreshController = RefreshController(initialRefresh: false);
 
   @override
   void onInit() {
-    print(Get.arguments); //FIXME: title/keyword
+    print(Get.arguments);
+    searchData(keyword: Get.arguments['keyword']);
     super.onInit();
   }
 

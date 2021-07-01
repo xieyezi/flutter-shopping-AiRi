@@ -14,9 +14,8 @@ class SearchPage extends GetView<SearchController> {
 
   @override
   Widget build(BuildContext context) {
-    final title = 'Get.arguments()';
-    print(Get.arguments());
-    final keyword = '';
+    final title = Get.arguments['title'];
+    final keyword = Get.arguments['keyword'];
     return BaseScaffold(
       leadType: AppBarBackType.Back,
       actions: <Widget>[
@@ -58,43 +57,44 @@ class _SerachContainerState extends State<SerachContainer> {
 
   @override
   Widget build(BuildContext context) {
-    final SearchController state = Get.find();
-    return Container(
-      color: AppColors.primaryBackground,
-      child: Column(
-        children: <Widget>[
-          SearchBar(
-            keyword: keyWord,
-            myOntap: (value) {
-              setState(() {
-                keyWord = value; // 重新设置当前搜索框的值
-              });
-              state.searchData(keyword: value); // 跳转到Provider进行搜索请求
-            },
-          ),
-          Expanded(
-            child: state.loading
-                ? MyLoadingWidget()
-                : Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5),
+    return GetBuilder<SearchController>(builder: (controller) {
+      return Container(
+        color: AppColors.primaryBackground,
+        child: Column(
+          children: <Widget>[
+            SearchBar(
+              keyword: keyWord,
+              myOntap: (value) {
+                setState(() {
+                  keyWord = value; // 重新设置当前搜索框的值
+                });
+                controller.searchData(keyword: value); // 跳转到Provider进行搜索请求
+              },
+            ),
+            Expanded(
+              child: controller.loading
+                  ? MyLoadingWidget()
+                  : Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      padding: EdgeInsets.all(15),
+                      margin: EdgeInsets.all(15),
+                      child: SmartRefresher(
+                        enablePullUp: true,
+                        controller: controller.refreshController,
+                        onRefresh: () => controller.searchData(refresh: true, keyword: ''),
+                        onLoading: () => controller.loadData(keyword: ''),
+                        header: WaterDropHeader(),
+                        footer: MyCustomFooter(),
+                        child: _buildresultList(controller.result),
+                      ),
                     ),
-                    padding: EdgeInsets.all(15),
-                    margin: EdgeInsets.all(15),
-                    child: SmartRefresher(
-                      enablePullUp: true,
-                      controller: state.refreshController,
-                      onRefresh: () => state.searchData(refresh: true, keyword: ''),
-                      onLoading: () => state.loadData,
-                      header: WaterDropHeader(),
-                      footer: MyCustomFooter(),
-                      child: _buildresultList(state.result),
-                    ),
-                  ),
-          ),
-        ],
-      ),
-    );
+            ),
+          ],
+        ),
+      );
+    });
   }
 }

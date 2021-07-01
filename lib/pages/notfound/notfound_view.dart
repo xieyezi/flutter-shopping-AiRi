@@ -14,7 +14,7 @@ class NotfoundPage extends StatelessWidget {
       body: ListTile(
         title: Text("返回首页"),
         subtitle: Text('返回首页'),
-        onTap: () => Get.offAllNamed(AppRoutes.Home),
+        onTap: () => Get.offAllNamed(AppRoutes.Main),
       ),
     );
   }
