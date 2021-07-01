@@ -26,32 +26,33 @@ class ManageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ManageController state = Get.find();
-    return Container(
-      color: AppColors.primaryBackground,
-      child: SmartRefresher(
-        controller: state.refreshController,
-        enablePullUp: true,
-        enablePullDown: false,
-        onLoading: state.loadData,
-        footer: MyCustomFooter(),
-        child: CustomScrollView(
-          slivers: <Widget>[
-                SliverToBoxAdapter(
-                  child: Stack(
-                    children: <Widget>[
-                      _buildTop(context),
-                      _buildFunc(context),
-                      _buildImageRecommend(context),
-                      _buildMoreFunc(context),
-                    ],
+    return GetBuilder<ManageController>(builder: (controller) {
+      return Container(
+        color: AppColors.primaryBackground,
+        child: SmartRefresher(
+          controller: controller.refreshController,
+          enablePullUp: true,
+          enablePullDown: false,
+          onLoading: controller.loadData,
+          footer: MyCustomFooter(),
+          child: CustomScrollView(
+            slivers: <Widget>[
+                  SliverToBoxAdapter(
+                    child: Stack(
+                      children: <Widget>[
+                        _buildTop(context),
+                        _buildFunc(context),
+                        _buildImageRecommend(context),
+                        _buildMoreFunc(context),
+                      ],
+                    ),
                   ),
-                ),
-              ] +
-              _hotCommodity(state.hotList),
+                ] +
+                _hotCommodity(controller.hotList),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 
   /// 上方

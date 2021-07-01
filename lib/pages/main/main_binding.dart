@@ -8,10 +8,10 @@ import 'main_controller.dart';
 class MainBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<MainController>(() => MainController());
-    Get.lazyPut<HomeController>(() => HomeController());
-    Get.lazyPut<ManageController>(() => ManageController());
-    Get.lazyPut<CategoryController>(() => CategoryController());
-    Get.lazyPut<ShoppingCartGlobalController>(() => ShoppingCartGlobalController());
+    Get.lazyPut<MainController>(() => MainController(), fenix: true);
+    Get.lazyPut<HomeController>(() => HomeController(), fenix: true);
+    Get.lazyPut<ManageController>(() => ManageController(), fenix: true);
+    Get.lazyPut<CategoryController>(() => CategoryController(), fenix: true);
+    Get.lazyPut<ShoppingCartGlobalController>(() => ShoppingCartGlobalController(), fenix: true);
   }
 }

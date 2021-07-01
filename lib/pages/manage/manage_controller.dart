@@ -10,6 +10,7 @@ class ManageController extends GetxController {
 
   @override
   void onInit() {
+    initData();
     super.onInit();
   }
 

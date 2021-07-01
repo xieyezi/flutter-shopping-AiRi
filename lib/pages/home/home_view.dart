@@ -17,7 +17,6 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-   
     return BaseScaffold(
       leadType: AppBarBackType.None,
       actions: <Widget>[AppBarShopCartIconButton()],
@@ -36,62 +35,62 @@ class HomePageContainer extends StatefulWidget {
 class _HomePageContainerState extends State<HomePageContainer> {
   @override
   Widget build(BuildContext context) {
-    final HomeController state = Get.find();
-
-    return state.loading
-        ? MyLoadingWidget()
-        : Container(
-            color: AppColors.primaryBackground,
-            child: GestureDetector(
-              onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
-              child: SmartRefresher(
-                controller: state.refreshController,
-                enablePullUp: true,
-                onRefresh: () => state.initData(refresh: true),
-                onLoading: state.loadData,
-                header: WaterDropMaterialHeader(),
-                footer: MyCustomFooter(),
-                child: CustomScrollView(
-                  slivers: <Widget>[
-                        // 预加载图片
-                        SliverToBoxAdapter(
-                          child: Container(
-                            height: 0,
-                            child: PreloadImages(),
+    return GetBuilder<HomeController>(builder: (controller) {
+      return controller.loading
+          ? MyLoadingWidget()
+          : Container(
+              color: AppColors.primaryBackground,
+              child: GestureDetector(
+                onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
+                child: SmartRefresher(
+                  controller: controller.refreshController,
+                  enablePullUp: true,
+                  onRefresh: () => controller.initData(refresh: true),
+                  onLoading: controller.loadData,
+                  header: WaterDropMaterialHeader(),
+                  footer: MyCustomFooter(),
+                  child: CustomScrollView(
+                    slivers: <Widget>[
+                          // 预加载图片
+                          SliverToBoxAdapter(
+                            child: Container(
+                              height: 0,
+                              child: PreloadImages(),
+                            ),
                           ),
-                        ),
 
-                        /// 搜索框
-                        SliverToBoxAdapter(
-                          child:
-                              //FIXME: title: '搜索', keyword: value
-                              SearchBar(myOntap: (value) => MyNavigator.push(SearchPage())),
-                        ),
-
-                        /// 顶部轮播图
-                        SliverToBoxAdapter(
-                          child: HeadSwiper(
-                            bannerList: state.banerList,
+                          /// 搜索框
+                          SliverToBoxAdapter(
+                            child:
+                                //FIXME: title: '搜索', keyword: value
+                                SearchBar(myOntap: (value) => MyNavigator.push(SearchPage())),
                           ),
-                        ),
 
-                        /// 商品分类区域
-                        SliverToBoxAdapter(
-                          child: CommodityCateGory(cateGoryList: state.cateGoryList),
-                        ),
+                          /// 顶部轮播图
+                          SliverToBoxAdapter(
+                            child: HeadSwiper(
+                              bannerList: controller.banerList,
+                            ),
+                          ),
 
-                        /// 品牌轮播区域
-                        SliverToBoxAdapter(
-                          child: BrandSwiper(brandList: state.brandList),
-                        ),
+                          /// 商品分类区域
+                          SliverToBoxAdapter(
+                            child: CommodityCateGory(cateGoryList: controller.cateGoryList),
+                          ),
 
-                        /// 热销商品区域
-                      ] +
-                      _hotCommodity(state.hotList),
+                          /// 品牌轮播区域
+                          SliverToBoxAdapter(
+                            child: BrandSwiper(brandList: controller.brandList),
+                          ),
+
+                          /// 热销商品区域
+                        ] +
+                        _hotCommodity(controller.hotList),
+                  ),
                 ),
               ),
-            ),
-          );
+            );
+    });
   }
 
   /// 热销商品区域

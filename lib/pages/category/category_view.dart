@@ -51,45 +51,46 @@ class CategoryState extends State<Category> with AutomaticKeepAliveClientMixin {
         scafoldHeight -
         searchBarHeight -
         bottomTabbarHeight;
-    // final double rightListViewHeight = 600;
-    final CategoryController state = Get.find();
-    return state.loading.value
-        ? MyLoadingWidget()
-        : Container(
-            color: Color(0xFFFFFFFF),
-            child: Column(
-              children: <Widget>[
-                SearchBar(
-                  //FIXME:title: '搜索', keyword: value
-                  myOntap: (value) => MyNavigator.push(SearchPage()),
-                ),
-                Expanded(
-                  child: Row(
-                    children: <Widget>[
-                      SingleChildScrollView(
-                        child: Container(
-                          color: Color(0xFFf7f7f7),
-                          width: 100,
-                          child: CategoryMenue(
-                              key: categoryMenueKey,
-                              items: state.categoryData.map((i) {
-                                return i.name;
-                              }).toList(),
-                              itemHeight: 60,
-                              itemWidth: 80,
-                              menueTaped: menueItemTap),
-                        ),
-                      ),
-                      RightListView(
-                          key: rightListviewKey,
-                          height: rightListViewHeight,
-                          dataItems: state.categoryData,
-                          listViewChanged: listViewChanged)
-                    ],
+
+    return GetBuilder<CategoryController>(builder: (controller) {
+      return controller.loading.value
+          ? MyLoadingWidget()
+          : Container(
+              color: Color(0xFFFFFFFF),
+              child: Column(
+                children: <Widget>[
+                  SearchBar(
+                    //FIXME:title: '搜索', keyword: value
+                    myOntap: (value) => MyNavigator.push(SearchPage()),
                   ),
-                )
-              ],
-            ));
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        SingleChildScrollView(
+                          child: Container(
+                            color: Color(0xFFf7f7f7),
+                            width: 100,
+                            child: CategoryMenue(
+                                key: categoryMenueKey,
+                                items: controller.categoryData.map((i) {
+                                  return i.name;
+                                }).toList(),
+                                itemHeight: 60,
+                                itemWidth: 80,
+                                menueTaped: menueItemTap),
+                          ),
+                        ),
+                        RightListView(
+                            key: rightListviewKey,
+                            height: rightListViewHeight,
+                            dataItems: controller.categoryData,
+                            listViewChanged: listViewChanged)
+                      ],
+                    ),
+                  )
+                ],
+              ));
+    });
   }
 
   menueItemTap(int i) {
