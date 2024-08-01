@@ -1,26 +1,32 @@
 # AiRi
 
-Language: English | [中文简体](https://github.com/xieyezi/flutter-shopping-ArRi)
+<strong> 已迁移至空安全版本 </strong>
 
+Language: 中文简体 | [English](https://github.com/xieyezi/flutter-shopping-ArRi)
 
-### have been migrate to null-safety version
+下载`apk`文件请点击[这里](https://github.com/xieyezi/flutter-shopping-AiRi/blob/master/apk/airi.apk?raw=trueg)
 
-Supported features：
+### 更新记录
 
-- [x]  Complete e-commerce shopping process
-- [x]  Animation linkage between category pages
-- [x]  Use provider (version 4.x) for state management
-- [x]  Network request encapsulation based on dio (version 3.x)
-- [x]  Processing and packaging of input boxes and other components
-- [x]  Pull down to refresh + pull up to load more
-- [x]  Custom Dialog
+- ~~增加安卓 APP 图标~~
+- ~~已迁移至空安全版本~~
+- ~~添加 apk 文件~~
+- ~~项目采用了 mock 接口，目前 mock 接口已挂，正在修复中...~~(已修复)
 
+已有的功能有：
 
-Realize specific design effects by setting, modifying, combining self-contained parts and customizing to meet the needs of daily development.
+- [x] 完整的电商购物流程
+- [x] 分类页面左右动画联动
+- [x] 使用 provider (5.x 版本)做状态管理
+- [x] 基于 dio （4.x 版本）的网络请求封装
+- [x] 输入框等部件的处理封装
+- [x] 下拉刷新 + 上拉加载更多
+- [x] 自定义 Dialog
 
-This project is still in continuous iteration, just give 🌟🌟 if you like it !
+通过设置、修改、组合自带部件以及自定义来实现具体的设计效果，满足日常开发的需求。  
+**这个项目还在持续迭代中，喜欢就给个小 🌟🌟 吧**
 
-## Operating environment
+## 项目运行环境
 
 ```
 Flutter 2.2.0 • channel stable • https://github.com/flutter/flutter.git
@@ -29,21 +35,20 @@ Engine • revision a9d88a4d18
 Tools • Dart 2.13.0
 ```
 
+## 后续计划
 
-## Next Plan
+- [ ] 从 provider 迁移到 getx
+- [x] 整理项目文件夹，优化代码
+- [x] 完成登录页面
+- [x] 完成个人中心页
 
-- [x]  Organize project folders and optimize code
-- [x]  Complete the login page
-- [ ]  Complete product multi-spec selection function
-- [ ]  Support night mode
+## 回馈和建议
 
-## Feedback and Suggestions
+如果你有更好的想法或者你想参与到这个项目中来，欢迎提交 PR!!
 
-If you have a better idea or you want to participate in this project ,Welcome to PR!
+## 预览
 
-## Preview
-
-The effect of some pages is as follows:
+部分页面效果如下：
 
 | ![](./screenshot/Screenshot_1.png)  | ![](./screenshot/Screenshot_2.png)  | ![](./screenshot/Screenshot_3.png)  | ![](./screenshot/Screenshot_4.png)  |
 | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: |
